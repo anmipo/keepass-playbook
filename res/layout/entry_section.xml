@@ -17,19 +17,33 @@
   You should have received a copy of the GNU General Public License
   along with KeePassDroid.  If not, see <http://www.gnu.org/licenses/>.
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="fill_parent"
   android:layout_height="wrap_content"
   android:orientation="vertical">
+    
 	<TextView android:id="@+id/title"
 	  android:layout_width="fill_parent"
 	  android:layout_height="wrap_content"
+	  android:gravity="left"
 	  style="@style/WhiteOnDarkSmall"
 	/>
+	<Button
+      android:id="@+id/copy_button"
+	  android:layout_width="wrap_content"
+	  android:layout_height="wrap_content"
+	  android:layout_below="@id/title"
+	  android:layout_alignParentRight="true"
+	  android:text="@string/copy_entry" 
+	  style="@style/CopyButton" />
 	<com.keepassdroid.view.TextViewSelect 
 	  android:id="@+id/value"
 	  android:layout_width="fill_parent"
 	  android:layout_height="wrap_content"
+	  android:layout_below="@id/title"
+	  android:gravity="left"
+	  android:layout_toLeftOf="@id/copy_button"
 	  style="@style/EntryItem"
 	/>
-</LinearLayout> 
+
+</RelativeLayout> 

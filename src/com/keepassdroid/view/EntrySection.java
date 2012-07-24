@@ -20,15 +20,19 @@
 package com.keepassdroid.view;
 
 import android.content.Context;
+import android.text.ClipboardManager;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.widget.LinearLayout;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.keepass.R;
 
-public class EntrySection extends LinearLayout {
-
+public class EntrySection extends RelativeLayout {
+	
 	public EntrySection(Context context) {
 		this(context, null);
 	}
@@ -43,15 +47,30 @@ public class EntrySection extends LinearLayout {
 		inflate(context, title, value);
 	}
 
-
 	private void inflate(Context context, String title, String value) {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		inflater.inflate(R.layout.entry_section, this);
 		
 		setText(R.id.title, title);
 		setText(R.id.value, value);
+		setupCopyButton(value);
 	}
-	
+
+	private void setupCopyButton(String value) {
+		Button copyButton = (Button) findViewById(R.id.copy_button);
+		final String text = value;
+		copyButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				ClipboardManager cbdMgr = (ClipboardManager) getContext()
+						.getSystemService(Context.CLIPBOARD_SERVICE);
+				cbdMgr.setText(text);
+				Toast.makeText(getContext(), R.string.copy_entry_performed, 
+						Toast.LENGTH_SHORT).show();
+			}
+		});
+	}
+
 	private void setText(int resId, String str) {
 		if (str != null) {
 			TextView tvTitle = (TextView) findViewById(resId);
