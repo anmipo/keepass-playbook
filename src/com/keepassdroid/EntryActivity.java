@@ -42,6 +42,7 @@ import android.text.method.PasswordTransformationMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -144,6 +145,7 @@ public class EntryActivity extends LockCloseActivity {
 		fillData();
 
 		setupEditButtons();
+		setupCopyButtons();
 		
 		// Notification Manager
 		mNM = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
@@ -239,9 +241,28 @@ public class EntryActivity extends LockCloseActivity {
 			populateText(R.id.entry_expires, R.string.never);
 		}
 		populateText(R.id.entry_comment, mEntry.getNotes());
-
 	}
 	
+	private void setupCopyButtons() {
+		setupCopyButton(R.id.copy_user_name_button, mEntry.getUsername(), 
+				R.string.copy_username_performed);
+		setupCopyButton(R.id.copy_password_button, mEntry.getPassword(), 
+				R.string.copy_password_performed);
+	}
+	
+	private void setupCopyButton(int id, final String value, 
+			final int confirmationTextId) {
+		Button copyButton = (Button)findViewById(id);
+		copyButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				timeoutCopyToClipboard(value);
+				Toast.makeText(getBaseContext(), confirmationTextId, 
+						Toast.LENGTH_SHORT).show();
+			}
+		});
+	}
+
 	private void populateText(int viewId, int resId) {
 		TextView tv = (TextView) findViewById(viewId);
 		tv.setText(resId);
