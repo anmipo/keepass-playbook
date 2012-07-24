@@ -146,6 +146,7 @@ public class EntryActivity extends LockCloseActivity {
 
 		setupEditButtons();
 		setupCopyButtons();
+		setupBackButton();
 		
 		// Notification Manager
 		mNM = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
@@ -243,6 +244,18 @@ public class EntryActivity extends LockCloseActivity {
 		populateText(R.id.entry_comment, mEntry.getNotes());
 	}
 	
+	private void setupBackButton() {
+		Button button = (Button) findViewById(R.id.back_button);
+		if (button != null) {
+			button.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					EntryActivity.this.setResult(Activity.RESULT_CANCELED);
+					EntryActivity.this.finish();
+				}
+			});
+		}
+	} 
 	private void setupCopyButtons() {
 		setupCopyButton(R.id.copy_user_name_button, mEntry.getUsername(), 
 				R.string.copy_username_performed);

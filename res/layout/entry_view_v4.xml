@@ -29,6 +29,12 @@
 	  android:gravity="center_vertical"
 	  android:padding="2dp"
 	  style="@style/WhiteOnBlack">
+	    <Button android:id="@+id/back_button"
+	      android:layout_width="wrap_content"
+	      android:layout_height="wrap_content"
+		  android:layout_gravity="left|center_vertical"
+	      android:text="@string/back"
+	      style="@style/BackButton"/>
 		<TextView android:id="@+id/entry_title"
 		  android:layout_width="wrap_content"
 		  android:layout_height="wrap_content"

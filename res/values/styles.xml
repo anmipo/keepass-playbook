@@ -66,4 +66,9 @@
 	    <item name="android:layout_marginLeft">5sp</item>
 	    <item name="android:layout_marginRight">5sp</item>
 	</style>
+	<style name="BackButton">
+	    <item name="android:width">100sp</item>
+	    <item name="android:gravity">left|center_vertical</item>
+	    <item name="android:layout_marginRight">20sp</item>
+	</style>
 </resources>

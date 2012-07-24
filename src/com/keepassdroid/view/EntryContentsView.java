@@ -22,11 +22,11 @@ package com.keepassdroid.view;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.android.keepass.R;
 
-public class EntryContentsView extends LinearLayout {
+public class EntryContentsView extends RelativeLayout {
 	
 	public EntryContentsView(Context context) {
 		this(context, null);
