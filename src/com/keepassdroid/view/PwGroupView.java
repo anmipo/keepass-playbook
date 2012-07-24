@@ -67,9 +67,6 @@ public class PwGroupView extends ClickView {
 		float size = PrefsUtil.getListTextSize(act); 
 		tv.setTextSize(size);
 		
-		TextView label = (TextView) gv.findViewById(R.id.group_label);
-		label.setTextSize(size-8);
-		
 		LayoutParams lp = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
 		
 		addView(gv, lp);
