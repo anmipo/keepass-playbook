@@ -17,7 +17,7 @@
   You should have received a copy of the GNU General Public License
   along with KeePassDroid.  If not, see <http://www.gnu.org/licenses/>.
 -->
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 	<style name="GroupTextSmall" parent="android:Theme">
 		<item name="@android:textColor">@color/group</item>
 		<item name="@android:textSize">15sp</item>
@@ -60,15 +60,18 @@
 	<style name="EntryItem">
 		<item name="@android:padding">5sp</item>
 	</style>
-	<style name="CopyButton">
+	<style name="Button">
+	    <item name="android:textSize">15sp</item>
+	</style>
+	<style name="CopyButton" parent="Button">
 	    <item name="android:layout_marginTop">0sp</item>
 	    <item name="android:layout_marginBottom">0sp</item>
 	    <item name="android:layout_marginLeft">5sp</item>
 	    <item name="android:layout_marginRight">5sp</item>
 	</style>
-	<style name="BackButton">
-	    <item name="android:width">100sp</item>
+	<style name="BackButton" parent="Button">
 	    <item name="android:gravity">left|center_vertical</item>
 	    <item name="android:layout_marginRight">20sp</item>
+	    <item name="android:paddingRight">20sp</item>
 	</style>
 </resources>

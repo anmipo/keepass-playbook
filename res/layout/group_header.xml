@@ -23,6 +23,17 @@
   android:gravity="center_vertical"
   android:padding="2sp"
   style="@style/WhiteOnBlack">
+
+    <Button
+        android:id="@+id/back_button"
+        style="@style/BackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical"
+        android:drawableLeft="@drawable/ic_back"
+        android:drawablePadding="5dp"
+        android:text="@string/back" />
+    
 	<TextView android:id="@+id/group_name" 
 	  android:layout_width="wrap_content"
 	  android:layout_height="wrap_content"

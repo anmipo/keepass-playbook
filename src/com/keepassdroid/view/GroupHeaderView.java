@@ -19,12 +19,18 @@
  */
 package com.keepassdroid.view;
 
+import android.app.Activity;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 
+import com.android.keepass.KeePass;
 import com.android.keepass.R;
+import com.keepassdroid.GroupActivity;
 
 public class GroupHeaderView extends RelativeLayout {
 
@@ -36,8 +42,23 @@ public class GroupHeaderView extends RelativeLayout {
 		super(context, attrs);
 		
 		inflate(context);
+		setupBackButton();
 	}
 	
+	private void setupBackButton() {
+		Button backButton = (Button) findViewById(R.id.back_button);
+		if (backButton != null) {
+			backButton.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View view) {
+					Activity act = (Activity)view.getContext();
+					act.setResult(Activity.RESULT_CANCELED);
+					act.finish();
+				}
+			});
+		}		
+	}
+
 	private void inflate(Context context) {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		inflater.inflate(R.layout.group_header, this);
