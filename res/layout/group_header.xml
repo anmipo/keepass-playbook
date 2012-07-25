@@ -20,32 +20,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="fill_parent"
   android:layout_height="wrap_content"
-  android:gravity="center_vertical"
-  android:padding="2sp"
-  style="@style/WhiteOnBlack">
+  style="@style/HeaderBar">
 
     <Button
         android:id="@+id/back_button"
         style="@style/BackButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="left|center_vertical"
         android:text="@string/back" />
+
+	<ImageView
+	    android:id="@+id/icon"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    style="@style/HeaderIcon"
+	    android:src="@drawable/ic99_blank" />
     
-	<TextView android:id="@+id/group_name" 
-	  android:layout_width="wrap_content"
-	  android:layout_height="wrap_content"
-	  android:layout_gravity="left|center_vertical"
-	  android:layout_weight="1"
-	  android:text="@string/root"
-  	  style="@style/WhiteOnBlack"
-	/>
-	<ImageView android:id="@+id/icon"
-	  android:layout_width="wrap_content"
-	  android:layout_height="wrap_content"
-	  android:layout_gravity="right|center_vertical"
-	  android:scaleType="fitXY"
-	  android:src="@drawable/ic99_blank"
-	  style="@style/WhiteOnBlack"
-	/>
+	<TextView
+	    android:id="@+id/group_name"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_weight="1"
+	    style="@style/HeaderTitle"
+	    android:text="@string/root" />
+
 </LinearLayout>
