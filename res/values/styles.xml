@@ -61,7 +61,9 @@
 		<item name="@android:padding">5sp</item>
 	</style>
 	<style name="Button">
-	    <item name="android:textSize">15sp</item>
+	    <item name="android:textSize">20sp</item>
+	    <item name="android:background">@drawable/btn_dark</item>
+	    <item name="android:textColor">#cccccc</item>
 	</style>
 	<style name="CopyButton" parent="Button">
 	    <item name="android:layout_marginTop">0sp</item>
@@ -73,5 +75,7 @@
 	    <item name="android:gravity">left|center_vertical</item>
 	    <item name="android:layout_marginRight">20sp</item>
 	    <item name="android:paddingRight">20sp</item>
+	    <item name="android:drawableLeft">@drawable/ic_back</item>
+	    <item name="android:drawablePadding">5dp</item>
 	</style>
 </resources>
