@@ -66,12 +66,13 @@
 	    <item name="android:textColor">@android:color/white</item>
 	    <item name="android:paddingLeft">10dp</item>
 	    <item name="android:paddingRight">10dp</item>
-	</style>
-	<style name="CopyButton" parent="Button">
-	    <item name="android:layout_marginTop">0sp</item>
-	    <item name="android:layout_marginBottom">0sp</item>
+	    <item name="android:minWidth">100dp</item>
 	    <item name="android:layout_marginLeft">5sp</item>
 	    <item name="android:layout_marginRight">5sp</item>
+	    <item name="android:layout_marginTop">0sp</item>
+	    <item name="android:layout_marginBottom">0sp</item>
+	</style>
+	<style name="CopyButton" parent="Button">
 	</style>
 	<style name="BackButton" parent="Button">
 	    <item name="android:paddingLeft">5dp</item>
@@ -87,11 +88,21 @@
 		<item name="android:textColor">@android:color/primary_text_dark</item>
 		<item name="android:height">56dp</item>
 		<item name="android:padding">2dp</item>
+		<item name="android:textSize">28sp</item>
 	</style>
 	<style name="HeaderIcon">
 		<item name="android:scaleType">fitXY</item>
 		<item name="android:layout_marginRight">10dp</item>
 	</style>
 	<style name="HeaderTitle" parent="GroupTextLarge">
+	</style>
+	<style name="ListItem">
+   		<item name="android:textColor">@color/group</item>
+		<item name="android:textSize">20sp</item>
+		<item name="android:padding">10dp</item>
+	</style>
+	<style name="FormLabel">
+	    <item name="android:textColor">@color/form_label</item>
+	    <item name="android:textSize">20sp</item>
 	</style>
 </resources>
