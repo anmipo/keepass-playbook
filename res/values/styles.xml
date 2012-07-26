@@ -86,13 +86,14 @@
 	    <item name="android:layout_marginLeft">10dp</item>
 	    <item name="android:drawableLeft">@drawable/ic_back</item>
 	    <item name="android:drawablePadding">10dp</item>
+	    <item name="android:layout_centerVertical">true</item>
+	    <item name="android:layout_alignParentLeft">true</item>
 	</style>
 	<style name="HeaderBar">
 	    <item name="android:layout_width">fill_parent</item>
 	    <item name="android:layout_height">wrap_content</item>
-	    <item name="android:gravity">left|center_vertical</item>
 	    <item name="android:background">@drawable/header_bar_bg</item>
-		<item name="android:textColor">@android:color/primary_text_dark</item>
+		<item name="android:textColor">@color/group</item>
 		<item name="android:height">56dp</item>
 		<item name="android:padding">2dp</item>
 		<item name="android:textSize">28sp</item>
@@ -106,10 +107,12 @@
 	<style name="Header.Icon">
 		<item name="android:scaleType">fitXY</item>
 		<item name="android:layout_marginRight">10dp</item>
+		<item name="android:layout_centerInParent">true</item>
 	</style>
 	<style name="Header.Title">
 		<item name="android:textColor">@color/group</item>
 		<item name="android:textSize">28sp</item>
+		<item name="android:layout_centerInParent">true</item>
 	</style>
 	<style name="ListItem">
    		<item name="android:textColor">@color/group</item>

@@ -17,7 +17,7 @@
   You should have received a copy of the GNU General Public License
   along with KeePassDroid.  If not, see <http://www.gnu.org/licenses/>.
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     style="@style/HeaderBar">
@@ -25,13 +25,11 @@
     <Button android:id="@+id/back_button"
         style="@style/Button.Back"
         android:text="@string/back" />
-
-	<ImageView android:id="@+id/icon"
-	    style="@style/Header.Icon"
-	    android:src="@drawable/ic99_blank" />
-    
 	<TextView android:id="@+id/group_name"
 	    style="@style/Header.Title"
 	    android:text="@string/root" />
-
-</LinearLayout>
+	<ImageView android:id="@+id/icon"
+	    style="@style/Header.Icon"
+	    android:layout_toLeftOf="@id/group_name"
+	    android:src="@drawable/ic99_blank" />
+</RelativeLayout>

@@ -21,18 +21,19 @@
   android:layout_width="fill_parent"
   android:layout_height="fill_parent">
 	<!--  Title -->	
-	<LinearLayout android:id="@+id/title_block"
+	<RelativeLayout android:id="@+id/title_block"
 	  android:layout_alignParentTop="true"
 	  style="@style/HeaderBar">
 	    <Button android:id="@+id/back_button"
 	      style="@style/Button.Back"
 	      android:text="@string/back" />
-		<ImageView android:id="@+id/entry_icon"
-		  style="@style/Header.Icon"
-		  android:src="@drawable/ic99_blank" />
 		<TextView android:id="@+id/entry_title"
 		  style="@style/Header.Title" />
-	</LinearLayout>
+		<ImageView android:id="@+id/entry_icon"
+		  style="@style/Header.Icon"
+		  android:layout_toLeftOf="@id/entry_title"
+		  android:src="@drawable/ic99_blank" />
+	</RelativeLayout>
 	<Button android:id="@+id/entry_edit"
 	  android:text="@string/menu_edit"
 	  android:layout_width="100sp"
