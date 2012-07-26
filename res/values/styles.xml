@@ -67,29 +67,35 @@
 	    <item name="android:paddingLeft">10dp</item>
 	    <item name="android:paddingRight">10dp</item>
 	    <item name="android:minWidth">100dp</item>
-	    <item name="android:layout_marginLeft">5sp</item>
-	    <item name="android:layout_marginRight">5sp</item>
-	    <item name="android:layout_marginTop">0sp</item>
-	    <item name="android:layout_marginBottom">0sp</item>
+	    <item name="android:layout_marginTop">5dp</item>
+	    <item name="android:layout_marginBottom">5dp</item>
+	    <item name="android:layout_marginLeft">5dp</item>
+	    <item name="android:layout_marginRight">5dp</item>
 	    <item name="android:layout_width">wrap_content</item>
 	    <item name="android:layout_height">wrap_content</item>
 	</style>
 	<style name="Button.Icon">
 	    <item name="android:minWidth">0dp</item>
+	    <item name="android:layout_marginTop">0dp</item>
+	    <item name="android:layout_marginBottom">0dp</item>
 	</style>
-	<style name="Button.Copy">
+	<style name="Button.Inline">
+	    <item name="android:layout_marginTop">0dp</item>
+	    <item name="android:layout_marginBottom">0dp</item>
 	</style>
+	<style name="Button.Copy" parent="Button.Inline" />
 	<style name="Button.Back">
 	    <item name="android:paddingLeft">5dp</item>
 	    <item name="android:paddingRight">20dp</item>
-	    <item name="android:layout_marginRight">20dp</item>
 	    <item name="android:layout_marginLeft">10dp</item>
+	    <item name="android:layout_marginRight">20dp</item>
 	    <item name="android:drawableLeft">@drawable/ic_back</item>
 	    <item name="android:drawablePadding">10dp</item>
 	    <item name="android:layout_centerVertical">true</item>
 	    <item name="android:layout_alignParentLeft">true</item>
 	</style>
-	<style name="HeaderBar">
+	
+	<style name="Toolbar">
 	    <item name="android:layout_width">fill_parent</item>
 	    <item name="android:layout_height">wrap_content</item>
 	    <item name="android:background">@drawable/header_bar_bg</item>
@@ -99,6 +105,16 @@
 		<item name="android:textSize">28sp</item>
 	</style>
 	
+	<style name="HeaderBar" parent="Toolbar">
+	</style>
+	<style name="Footer" parent="Toolbar">
+	    <item name="android:gravity">right|center_vertical</item>
+	    <item name="android:layout_alignParentBottom">true</item>
+	    
+	</style>
+	<style name="Footer.Transparent">
+	    <item name="android:background">@android:color/transparent</item>
+	</style>
 	<!-- Parent style for header content -->
 	<style name="Header">
 	    <item name="android:layout_width">wrap_content</item>
