@@ -71,6 +71,8 @@
 	    <item name="android:layout_marginRight">5sp</item>
 	    <item name="android:layout_marginTop">0sp</item>
 	    <item name="android:layout_marginBottom">0sp</item>
+	    <item name="android:layout_width">wrap_content</item>
+	    <item name="android:layout_height">wrap_content</item>
 	</style>
 	<style name="Button.Icon">
 	    <item name="android:minWidth">0dp</item>
@@ -86,6 +88,8 @@
 	    <item name="android:drawablePadding">10dp</item>
 	</style>
 	<style name="HeaderBar">
+	    <item name="android:layout_width">fill_parent</item>
+	    <item name="android:layout_height">wrap_content</item>
 	    <item name="android:gravity">left|center_vertical</item>
 	    <item name="android:background">@drawable/header_bar_bg</item>
 		<item name="android:textColor">@android:color/primary_text_dark</item>
@@ -98,6 +102,8 @@
 		<item name="android:layout_marginRight">10dp</item>
 	</style>
 	<style name="HeaderTitle" parent="GroupTextLarge">
+	    <item name="android:layout_width">wrap_content</item>
+	    <item name="android:layout_height">wrap_content</item>
 	</style>
 	<style name="ListItem">
    		<item name="android:textColor">@color/group</item>

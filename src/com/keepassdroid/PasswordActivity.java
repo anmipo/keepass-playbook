@@ -33,18 +33,20 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.text.InputType;
 import android.text.method.PasswordTransformationMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import com.android.keepass.KeePass;
 import com.android.keepass.R;
@@ -183,22 +185,16 @@ public class PasswordActivity extends LockingActivity {
 		Button confirmButton = (Button) findViewById(R.id.pass_ok);
 		confirmButton.setOnClickListener(new OkClickHandler());
 		
-		CheckBox checkBox = (CheckBox) findViewById(R.id.show_password);
+		CheckBox passwordVisibleCheck = (CheckBox) findViewById(R.id.show_password);
 		// Show or hide password
-		checkBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-
+		passwordVisibleCheck.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			@Override
 			public void onCheckedChanged(CompoundButton buttonView,
 					boolean isChecked) {
-				TextView password = (TextView) findViewById(R.id.password);
-
-				if ( isChecked ) {
-					password.setTransformationMethod(null);
-				} else {
-					password.setTransformationMethod(PasswordTransformationMethod.getInstance());
-				}
+				setPasswordVisible(isChecked);
 			}
-			
 		});
+		setPasswordVisible(passwordVisibleCheck.isChecked());
 		
 		CheckBox defaultCheck = (CheckBox) findViewById(R.id.default_database);
 		defaultCheck.setOnCheckedChangeListener(new DefaultCheckChange());
@@ -226,6 +222,7 @@ public class PasswordActivity extends LockingActivity {
 					
 			}
 		});
+		setupBackButton();
 		
 		retrieveSettings();
 		
@@ -243,6 +240,25 @@ public class PasswordActivity extends LockingActivity {
 		registerReceiver(mIntentReceiver, new IntentFilter());
 	}
 	
+	protected void setPasswordVisible(boolean isVisible) {
+		TextView password = (TextView) findViewById(R.id.password);
+		password.setInputType(InputType.TYPE_CLASS_TEXT |
+			(isVisible ?
+				InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD :
+				InputType.TYPE_TEXT_VARIATION_PASSWORD));		
+	}
+
+	private void setupBackButton() {
+		Button backButton = (Button) findViewById(R.id.back_button);
+		backButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				PasswordActivity.this.setResult(Activity.RESULT_CANCELED);
+				PasswordActivity.this.finish();
+			}
+		});
+	}
+
 	@Override
 	protected void onDestroy() {
 		if (mIntentReceiver != null) {
