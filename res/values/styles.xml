@@ -74,14 +74,12 @@
 	    <item name="android:layout_width">wrap_content</item>
 	    <item name="android:layout_height">wrap_content</item>
 	</style>
-	<style name="Button.Icon">
-	    <item name="android:minWidth">0dp</item>
-	    <item name="android:layout_marginTop">0dp</item>
-	    <item name="android:layout_marginBottom">0dp</item>
-	</style>
 	<style name="Button.Inline">
 	    <item name="android:layout_marginTop">0dp</item>
 	    <item name="android:layout_marginBottom">0dp</item>
+	</style>
+	<style name="Button.Icon" parent="Button.Inline">
+		<item name="android:minWidth">60dp</item>
 	</style>
 	<style name="Button.Copy" parent="Button.Inline" />
 	<style name="Button.Back">

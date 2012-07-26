@@ -20,33 +20,37 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="fill_parent"
   android:layout_height="wrap_content">
+    <LinearLayout android:id="@+id/header"
+      style="@style/HeaderBar">
+		<Button android:id="@+id/entry_cancel"
+		  style="@style/Button.Back"
+		  android:text="@string/back"/>
+    </LinearLayout>
 	<LinearLayout android:id="@+id/footer" 
 	  style="@style/Footer">
 		<Button android:id="@+id/entry_save"
 		  style="@style/Button"
 		  android:text="@string/entry_save"/>
-		<Button android:id="@+id/entry_cancel"
-		  style="@style/Button"
-		  android:text="@string/entry_cancel"/>
 	</LinearLayout>
 
 	<ScrollView android:id="@+id/entry_scroll"
 	  android:layout_width="fill_parent"
 	  android:layout_height="fill_parent"
+	  android:layout_below="@id/header"
 	  android:layout_above="@id/footer">
 		<RelativeLayout android:layout_width="fill_parent"
 		  android:layout_height="wrap_content">
 			<!--  Title -->	
 			<TextView android:id="@+id/entry_title_label"
-			  android:layout_width="fill_parent"
-			  android:layout_height="wrap_content" 
-			  android:text="@string/entry_title" />
-			<ImageButton android:id="@+id/icon_button"
 			  android:layout_width="wrap_content"
 			  android:layout_height="wrap_content"
-			  android:src="@drawable/ic00"
+			  style="@style/FormLabel"
+			  android:text="@string/entry_title" />
+			<ImageButton android:id="@+id/icon_button"
+			  style="@style/Button.Icon"
 			  android:layout_alignParentRight="true"
-			  android:layout_below="@id/entry_title_label"/>
+			  android:layout_below="@id/entry_title_label"
+			  android:src="@drawable/ic00"/>
 			<EditText android:id="@+id/entry_title" 
 			  android:layout_width="fill_parent"
 			  android:layout_height="wrap_content"
@@ -56,6 +60,7 @@
 			  android:hint="@string/hint_title"/>
 			<!-- Username -->
 			<TextView android:id="@+id/entry_user_name_label"
+			  style="@style/FormLabel"
 			  android:layout_width="wrap_content"
 			  android:layout_height="wrap_content"
 			  android:layout_below="@id/icon_button"
@@ -68,6 +73,7 @@
 			  android:hint="@string/hint_username"/>
 			<!--  URL -->
 			<TextView android:id="@+id/entry_url_label"
+			  style="@style/FormLabel"
 			  android:layout_width="wrap_content"
 			  android:layout_height="wrap_content"
 			  android:layout_below="@id/entry_user_name" 
@@ -80,16 +86,16 @@
 			  android:hint="@string/hint_url"/>
 			<!-- Password -->
 			<TextView android:id="@+id/entry_password_label"
+			  style="@style/FormLabel"
 			  android:layout_width="wrap_content"
 			  android:layout_height="wrap_content" 
 			  android:layout_below="@id/entry_url" 
 			  android:text="@string/entry_password" />
 			<Button android:id="@+id/generate_button"
+			  style="@style/Button.Icon"
 			  android:layout_below="@id/entry_password_label"
-			  android:layout_width="wrap_content"
-			  android:text="@string/ellipsis"
-			  android:layout_height="wrap_content"
-			  android:layout_alignParentRight="true"/>
+			  android:layout_alignParentRight="true"
+			  android:text="@string/ellipsis" />
 			<EditText android:id="@+id/entry_password" 
 			  android:layout_width="fill_parent"
 			  android:layout_height="wrap_content"
@@ -100,6 +106,7 @@
 			  android:layout_alignTop="@id/generate_button"/>
 			<!-- Confirm Password -->
 			<TextView android:id="@+id/entry_confpassword_label"
+			  style="@style/FormLabel"
 			  android:layout_width="wrap_content" android:layout_height="wrap_content"
 			  android:layout_below="@id/entry_password" android:text="@string/entry_confpassword" />
 			<EditText android:id="@+id/entry_confpassword" 
@@ -111,6 +118,7 @@
 			  android:hint="@string/hint_conf_pass"/>
 			<!-- Comment -->
 			<TextView android:id="@+id/entry_comment_label"
+			  style="@style/FormLabel"
 			  android:layout_width="wrap_content"
 			  android:layout_height="wrap_content" 
 			  android:layout_below="@id/entry_confpassword" 
@@ -121,7 +129,6 @@
 		      android:layout_height="wrap_content"
 			  android:layout_below="@id/entry_comment_label"
 			  android:hint="@string/hint_comment"/>
-		
-</RelativeLayout>
+		</RelativeLayout>
 	</ScrollView>
 </RelativeLayout>
