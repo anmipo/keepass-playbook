@@ -23,29 +23,15 @@
 	<!--  Title -->	
 	<LinearLayout android:id="@+id/title_block"
 	  android:layout_alignParentTop="true"
-	  android:layout_width="fill_parent"
-	  android:layout_height="wrap_content"
 	  style="@style/HeaderBar">
 	    <Button android:id="@+id/back_button"
-	      android:layout_width="wrap_content"
-	      android:layout_height="wrap_content"
-	      style="@style/BackButton"
+	      style="@style/Button.Back"
 	      android:text="@string/back" />
-
-		<ImageView
-		  android:id="@+id/entry_icon"
-		  android:layout_width="wrap_content"
-		  android:layout_height="wrap_content"
-		  style="@style/HeaderIcon"
+		<ImageView android:id="@+id/entry_icon"
+		  style="@style/Header.Icon"
 		  android:src="@drawable/ic99_blank" />
-
-		<TextView
-		  android:id="@+id/entry_title"
-		  android:layout_width="wrap_content"
-		  android:layout_height="wrap_content"
-		  android:layout_weight="1" 
-		  style="@style/HeaderTitle" />
-
+		<TextView android:id="@+id/entry_title"
+		  style="@style/Header.Title" />
 	</LinearLayout>
 	<Button android:id="@+id/entry_edit"
 	  android:text="@string/menu_edit"

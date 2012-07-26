@@ -77,9 +77,9 @@
 	<style name="Button.Icon">
 	    <item name="android:minWidth">0dp</item>
 	</style>
-	<style name="CopyButton" parent="Button">
+	<style name="Button.Copy">
 	</style>
-	<style name="BackButton" parent="Button">
+	<style name="Button.Back">
 	    <item name="android:paddingLeft">5dp</item>
 	    <item name="android:paddingRight">20dp</item>
 	    <item name="android:layout_marginRight">20dp</item>
@@ -97,13 +97,19 @@
 		<item name="android:padding">2dp</item>
 		<item name="android:textSize">28sp</item>
 	</style>
-	<style name="HeaderIcon">
+	
+	<!-- Parent style for header content -->
+	<style name="Header">
+	    <item name="android:layout_width">wrap_content</item>
+	    <item name="android:layout_height">wrap_content</item>
+	</style>
+	<style name="Header.Icon">
 		<item name="android:scaleType">fitXY</item>
 		<item name="android:layout_marginRight">10dp</item>
 	</style>
-	<style name="HeaderTitle" parent="GroupTextLarge">
-	    <item name="android:layout_width">wrap_content</item>
-	    <item name="android:layout_height">wrap_content</item>
+	<style name="Header.Title">
+		<item name="android:textColor">@color/group</item>
+		<item name="android:textSize">28sp</item>
 	</style>
 	<style name="ListItem">
    		<item name="android:textColor">@color/group</item>

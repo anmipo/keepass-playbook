@@ -45,7 +45,7 @@
 	  android:layout_alignTop="@id/entry_user_name_label"
 	  android:layout_alignBottom="@id/entry_user_name"
 	  android:text="@string/copy_entry" 
-	  style="@style/CopyButton" />
+	  style="@style/Button.Copy" />
 	<!--  URL -->
 	<TextView android:id="@+id/entry_url_label"
 	  android:layout_width="fill_parent"
@@ -88,7 +88,7 @@
 	  android:layout_alignTop="@id/entry_password_label"
 	  android:layout_alignBottom="@id/entry_password"
 	  android:text="@string/copy_entry"
-	  style="@style/CopyButton" />
+	  style="@style/Button.Copy" />
 
 	<!-- Comment -->
 	<TextView android:id="@id/entry_comment_label"
