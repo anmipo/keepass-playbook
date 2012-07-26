@@ -37,6 +37,7 @@
 	  android:src="@drawable/ic_launcher_folder_small"	
 	  android:layout_alignParentRight="true"
 	  android:layout_below="@id/label_open_by_filename"
+	  style="@style/Button.Icon"
 	/>
   	<EditText android:id="@+id/file_filename"
   	  android:layout_width="fill_parent"

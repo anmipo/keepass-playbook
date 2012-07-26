@@ -72,6 +72,9 @@
 	    <item name="android:layout_marginTop">0sp</item>
 	    <item name="android:layout_marginBottom">0sp</item>
 	</style>
+	<style name="Button.Icon">
+	    <item name="android:minWidth">0dp</item>
+	</style>
 	<style name="CopyButton" parent="Button">
 	</style>
 	<style name="BackButton" parent="Button">
