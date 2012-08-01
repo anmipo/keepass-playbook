@@ -42,7 +42,6 @@
     <string name="ClearClipboard">Clipboard cleared.</string>
     <string name="clipboard_timeout">Clipboard timeout</string>
     <string name="clipboard_timeout_summary">Time before clearing clipboard after copying username or password</string>
-    <string name="copy_entry">Copy to clipboard</string>
     <string name="copy_entry_performed">Entry copied to clipboard</string>
     <string name="copy_username">Copy username to clipboard</string>
     <string name="copy_username_performed">Username copied to clipboard</string>

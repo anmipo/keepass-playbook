@@ -83,7 +83,9 @@
 	<style name="Button.Icon" parent="Button.Inline">
 		<item name="android:minWidth">50dp</item>
 	</style>
-	<style name="Button.Copy" parent="Button.Inline" />
+	<style name="Button.Copy" parent="Button.Inline">
+	    <item name="android:text">@android:string/copy</item>
+	</style>
 	<style name="Button.Back">
 	    <item name="android:paddingLeft">5dp</item>
 	    <item name="android:paddingRight">20dp</item>

@@ -34,7 +34,6 @@
 	  android:layout_height="wrap_content"
 	  android:layout_below="@id/title"
 	  android:layout_alignParentRight="true"
-	  android:text="@string/copy_entry" 
 	  style="@style/Button.Copy" />
 	<com.keepassdroid.view.TextViewSelect 
 	  android:id="@+id/value"
