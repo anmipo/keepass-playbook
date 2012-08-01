@@ -109,6 +109,7 @@
 			  android:singleLine="true"
 			  android:layout_toLeftOf="@id/generate_button"
 			  android:hint="@string/hint_pass"
+			  android:textAppearance="@style/VisiblePassword"
 			  android:layout_alignTop="@id/generate_button"/>
 			<!-- Confirm Password -->
 			<TextView android:id="@+id/entry_confpassword_label"
@@ -121,6 +122,7 @@
 			  android:password="true"
 			  android:singleLine="true"
 			  android:layout_below="@id/entry_confpassword_label"
+			  android:textAppearance="@style/VisiblePassword"
 			  android:hint="@string/hint_conf_pass"/>
 			<!-- Comment -->
 			<TextView android:id="@+id/entry_comment_label"
