@@ -21,10 +21,10 @@ package com.keepassdroid.view;
 
 
 import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ContextMenu.ContextMenuInfo;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -44,6 +44,7 @@ public class PwEntryView extends ClickView {
 	private int mPos;
 	
 	protected static final int MENU_OPEN = Menu.FIRST;
+	protected static final int MENU_CANCEL = Menu.FIRST + 10;
 	
 	public static PwEntryView getInstance(GroupBaseActivity act, PwEntry pw, int pos) {
 		if ( pw instanceof PwEntryV3 ) {
@@ -92,6 +93,7 @@ public class PwEntryView extends ClickView {
 	@Override
 	public void onCreateMenu(ContextMenu menu, ContextMenuInfo menuInfo) {
 		menu.add(0, MENU_OPEN, 0, R.string.menu_open);
+		menu.add(0, MENU_CANCEL, 10, R.string.menu_cancel);
 	}
 
 	@Override
@@ -101,7 +103,8 @@ public class PwEntryView extends ClickView {
 		case MENU_OPEN:
 			launchEntry();
 			return true;
-			
+		case MENU_CANCEL:
+			return true;		
 		default:
 			return false;
 		}

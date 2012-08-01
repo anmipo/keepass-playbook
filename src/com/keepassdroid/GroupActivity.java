@@ -25,10 +25,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ContextMenu.ContextMenuInfo;
-import android.widget.Button;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 
 import com.android.keepass.KeePass;

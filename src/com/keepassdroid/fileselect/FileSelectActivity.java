@@ -70,6 +70,7 @@ public class FileSelectActivity extends ListActivity {
 	private static final int MENU_APP_SETTINGS = Menu.FIRST + 2;
 	
 	private static final int CMENU_CLEAR = Menu.FIRST;
+	private static final int CMENU_CANCEL = Menu.FIRST + 10;
 	
 	public static final int FILE_BROWSE = 1;
 	
@@ -388,13 +389,15 @@ public class FileSelectActivity extends ListActivity {
 		super.onCreateContextMenu(menu, v, menuInfo);
 		
 		menu.add(0, CMENU_CLEAR, 0, R.string.remove_from_filelist);
+		menu.add(0, CMENU_CANCEL, 10, R.string.menu_cancel);
 	}
 
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
 		super.onContextItemSelected(item);
 		
-		if ( item.getItemId() == CMENU_CLEAR ) {
+		switch (item.getItemId()) {
+		case CMENU_CLEAR:
 			AdapterContextMenuInfo acmi = (AdapterContextMenuInfo) item.getMenuInfo();
 			
 			TextView tv = (TextView) acmi.targetView;
@@ -404,9 +407,11 @@ public class FileSelectActivity extends ListActivity {
 			refreshList();
 			
 			return true;
+		case CMENU_CANCEL:
+			return true;
+		default:
+			return false;
 		}
-		
-		return false;
 	}
 	
 	private void refreshList() {
