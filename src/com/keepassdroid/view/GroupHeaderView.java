@@ -42,10 +42,10 @@ public class GroupHeaderView extends RelativeLayout {
 		super(context, attrs);
 		
 		inflate(context);
-		setupBackButton();
+		setupButtons();
 	}
 	
-	private void setupBackButton() {
+	private void setupButtons() {
 		Button backButton = (Button) findViewById(R.id.back_button);
 		if (backButton != null) {
 			backButton.setOnClickListener(new OnClickListener() {
@@ -56,7 +56,17 @@ public class GroupHeaderView extends RelativeLayout {
 					act.finish();
 				}
 			});
-		}		
+		}
+		
+		View searchButton = findViewById(R.id.search_button);
+		if (searchButton != null) {
+			searchButton.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					((Activity)getContext()).onSearchRequested();
+				}
+			});
+		}
 	}
 
 	private void inflate(Context context) {

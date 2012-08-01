@@ -74,27 +74,26 @@
 	    <item name="android:layout_marginLeft">5dp</item>
 	    <item name="android:layout_marginRight">5dp</item>
 	    <item name="android:layout_width">wrap_content</item>
-	    <item name="android:layout_height">wrap_content</item>
+	    <item name="android:layout_height">43dp</item>
 	</style>
 	<style name="Button.Inline">
 	    <item name="android:layout_marginTop">0dp</item>
 	    <item name="android:layout_marginBottom">0dp</item>
 	</style>
 	<style name="Button.Icon" parent="Button.Inline">
-		<item name="android:minWidth">60dp</item>
+		<item name="android:minWidth">50dp</item>
 	</style>
 	<style name="Button.Copy" parent="Button.Inline" />
 	<style name="Button.Back">
 	    <item name="android:paddingLeft">5dp</item>
 	    <item name="android:paddingRight">20dp</item>
-	    <item name="android:layout_marginLeft">10dp</item>
+	    <item name="android:layout_marginLeft">5dp</item>
 	    <item name="android:layout_marginRight">20dp</item>
 	    <item name="android:drawableLeft">@drawable/ic_back</item>
 	    <item name="android:drawablePadding">10dp</item>
 	    <item name="android:layout_centerVertical">true</item>
 	    <item name="android:layout_alignParentLeft">true</item>
 	</style>
-	
 	<style name="Toolbar">
 	    <item name="android:layout_width">fill_parent</item>
 	    <item name="android:layout_height">wrap_content</item>
