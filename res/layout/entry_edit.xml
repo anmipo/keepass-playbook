@@ -25,22 +25,23 @@
 	  style="@style/HeaderBar">
 	    <Button android:id="@+id/back_button"
 	      style="@style/Button.Back"		  
-	      android:text="@string/back" />
+	      android:text="@string/cancel" />
 	    <TextView android:id="@+id/title"
 		  style="@style/Header.Title" />
+
+		<Button
+		    android:id="@+id/entry_save"
+		    style="@style/Button"
+		    android:layout_alignParentRight="true"
+		    android:layout_centerVertical="true"
+		    android:text="@string/entry_save" />
+
 	</RelativeLayout>
-	<LinearLayout android:id="@+id/footer" 
-	  style="@style/Footer">
-		<Button android:id="@+id/entry_save"
-		  style="@style/Button"
-		  android:text="@string/entry_save"/>
-	</LinearLayout>
 
 	<ScrollView android:id="@+id/entry_scroll"
 	  android:layout_width="fill_parent"
 	  android:layout_height="fill_parent"
-	  android:layout_below="@id/header"
-	  android:layout_above="@id/footer">
+	  android:layout_below="@id/header">
 		<RelativeLayout android:layout_width="fill_parent"
 		  android:layout_height="wrap_content">
 			<!--  Title -->	
