@@ -27,90 +27,87 @@
 	  android:layout_width="fill_parent"
 	  android:layout_height="wrap_content"
 	  android:text="@string/entry_user_name"
-	  android:layout_toLeftOf="@+id/copy_user_name_button"
-	  style="@style/WhiteOnDarkSmall"
+	  style="@style/EntryPropertyName"
 	/>
 	<com.keepassdroid.view.TextViewSelect android:id="@+id/entry_user_name" 
 	  android:layout_width="fill_parent"
 	  android:layout_height="wrap_content"
 	  android:layout_below="@id/entry_user_name_label"
-	  android:layout_toLeftOf="@id/copy_user_name_button"
-	  style="@style/EntryItem"
+	  android:layout_toLeftOf="@+id/copy_user_name_button"
+	  style="@style/EntryPropertyValue"
 	/>
 	<Button
 	  android:id="@id/copy_user_name_button"
 	  android:layout_width="wrap_content"
 	  android:layout_height="wrap_content"
 	  android:layout_alignParentRight="true"
-	  android:layout_alignTop="@id/entry_user_name_label"
-	  android:layout_alignBottom="@id/entry_user_name"
+	  android:layout_below="@id/entry_user_name_label"
+	  android:layout_alignTop="@id/entry_user_name"
 	  style="@style/Button.Copy" />
+	
 	<!--  URL -->
 	<TextView android:id="@+id/entry_url_label"
 	  android:layout_width="fill_parent"
 	  android:layout_height="wrap_content"
-	  android:layout_below="@id/entry_user_name"
-	  android:layout_toLeftOf="@+id/copy_url_button"
+	  android:layout_below="@id/copy_user_name_button"
 	  android:text="@string/entry_url" 
-	  style="@style/WhiteOnDarkSmall"
-	/>
+	  style="@style/EntryPropertyName" />
 	<com.keepassdroid.view.TextViewSelect android:id="@+id/entry_url" 
 	  android:layout_width="fill_parent"
 	  android:layout_height="wrap_content"
 	  android:layout_below="@id/entry_url_label"
-	  android:layout_toLeftOf="@id/copy_url_button"
+	  android:layout_toLeftOf="@+id/copy_url_button"
 	  android:autoLink="all"
-	  style="@style/EntryItem"
+	  style="@style/EntryPropertyValue"
 	/>
 	<Button
 	  android:id="@id/copy_url_button"
 	  android:layout_width="wrap_content"
 	  android:layout_height="wrap_content"
 	  android:layout_alignParentRight="true"
-	  android:layout_alignTop="@id/entry_url_label"
-	  android:layout_alignBottom="@id/entry_url"
+	  android:layout_alignTop="@id/entry_url"
+	  android:layout_below="@id/entry_url_label"
 	  style="@style/Button.Copy" />
+
 	<!-- Password -->
 	<TextView android:id="@+id/entry_password_label"
 	  android:layout_width="fill_parent"
 	  android:layout_height="wrap_content"
-	  android:layout_below="@id/entry_url" 
-	  android:layout_toLeftOf="@+id/copy_password_button"
+	  android:layout_below="@id/copy_url_button" 
 	  android:text="@string/entry_password"
-	  style="@style/WhiteOnDarkSmall"
+	  style="@style/EntryPropertyName"
 	/>
-
 	<com.keepassdroid.view.TextViewSelect
 	  android:id="@+id/entry_password"
-	  style="@style/EntryItem"
 	  android:layout_width="fill_parent"
 	  android:layout_height="wrap_content"
 	  android:layout_below="@id/entry_password_label"
 	  android:layout_toLeftOf="@+id/copy_password_button"
+	  style="@style/EntryPropertyValue"
+	  android:textAppearance="@style/VisiblePassword"
 	  android:password="true" />
-
 	<Button
 	  android:id="@id/copy_password_button"
 	  android:layout_width="wrap_content"
 	  android:layout_height="wrap_content"
 	  android:layout_alignParentRight="true"
-	  android:layout_alignTop="@id/entry_password_label"
-	  android:layout_alignBottom="@id/entry_password"
+	  android:layout_alignTop="@id/entry_password"
+	  android:layout_below="@id/entry_password_label"
 	  style="@style/Button.Copy" />
 
 	<!-- Comment -->
 	<TextView android:id="@id/entry_comment_label"
 	  android:layout_width="fill_parent"
 	  android:layout_height="wrap_content" 
-	  android:layout_below="@id/entry_password"
+	  android:layout_below="@id/copy_password_button"
 	  android:text="@string/entry_comment"
-	  style="@style/WhiteOnDarkSmall"
+	  style="@style/EntryPropertyName"
 	/>
 	<com.keepassdroid.view.TextViewSelect android:id="@+id/entry_comment" 
       android:layout_width="fill_parent"
 	  android:layout_height="wrap_content"
 	  android:layout_below="@id/entry_comment_label"
-	  style="@style/EntryItem"
+	  style="@style/EntryPropertyValue"
 	/>
 	<LinearLayout android:id="@+id/extra_strings"
 	  android:layout_width="fill_parent"
@@ -124,13 +121,13 @@
 	  android:layout_height="wrap_content" 
 	  android:layout_below="@id/extra_strings"
 	  android:text="@string/entry_created"
-	  style="@style/WhiteOnDarkSmall"
+	  style="@style/EntryPropertyName"
 	/>
 	<TextView android:id="@+id/entry_created" 
 	  android:layout_width="fill_parent"
 	  android:layout_height="wrap_content"
 	  android:layout_below="@id/entry_created_label"
-	  style="@style/EntryItem"
+	  style="@style/EntryPropertyValue"
 	/>
 	<!-- Modified -->
 	<TextView android:id="@+id/entry_modified_label"
@@ -138,13 +135,13 @@
 	  android:layout_height="wrap_content" 
 	  android:layout_below="@id/entry_created"
 	  android:text="@string/entry_modified"
-	  style="@style/WhiteOnDarkSmall"
+	  style="@style/EntryPropertyName"
 	/>
 	<TextView android:id="@+id/entry_modified" 
 	  android:layout_width="fill_parent"
 	  android:layout_height="wrap_content"
 	  android:layout_below="@id/entry_modified_label"
-	  style="@style/EntryItem"
+	  style="@style/EntryPropertyValue"
 	/>
 	<!-- Accessed -->
 	<TextView android:id="@+id/entry_accessed_label"
@@ -152,13 +149,13 @@
 	  android:layout_height="wrap_content" 
 	  android:layout_below="@id/entry_modified"
 	  android:text="@string/entry_accessed"
-	  style="@style/WhiteOnDarkSmall"
+	  style="@style/EntryPropertyName"
 	/>
 	<TextView android:id="@+id/entry_accessed" 
 	  android:layout_width="fill_parent"
 	  android:layout_height="wrap_content"
 	  android:layout_below="@id/entry_accessed_label"
-	  style="@style/EntryItem"
+	  style="@style/EntryPropertyValue"
 	/>
 	<!-- Expires -->
 	<TextView android:id="@+id/entry_expires_label"
@@ -166,12 +163,12 @@
 	  android:layout_height="wrap_content" 
 	  android:layout_below="@id/entry_accessed"
 	  android:text="@string/entry_expires"
-	  style="@style/WhiteOnDarkSmall"
+	  style="@style/EntryPropertyName"
 	/>
 	<TextView android:id="@+id/entry_expires" 
 	  android:layout_width="fill_parent"
 	  android:layout_height="wrap_content"
 	  android:layout_below="@id/entry_expires_label"
-	  style="@style/EntryItem"
+	  style="@style/EntryPropertyValue"
 	/>
 </RelativeLayout>

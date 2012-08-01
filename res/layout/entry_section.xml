@@ -26,7 +26,7 @@
 	  android:layout_width="fill_parent"
 	  android:layout_height="wrap_content"
 	  android:gravity="left"
-	  style="@style/WhiteOnDarkSmall"
+	  style="@style/EntryPropertyName"
 	/>
 	<Button
       android:id="@+id/copy_button"
@@ -42,7 +42,5 @@
 	  android:layout_below="@id/title"
 	  android:gravity="left"
 	  android:layout_toLeftOf="@id/copy_button"
-	  style="@style/EntryItem"
-	/>
-
+	  style="@style/EntryPropertyValue" />
 </RelativeLayout> 

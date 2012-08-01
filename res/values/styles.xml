@@ -59,9 +59,6 @@
 	<style name="ElementTextTitle" parent="WhiteOnBlack">
 		<item name="android:textColor">@color/group</item>
 	</style>
-	<style name="EntryItem">
-		<item name="android:padding">5sp</item>
-	</style>
 	<style name="Button">
 	    <item name="android:textSize">20sp</item>
 	    <item name="android:background">@drawable/btn_dark</item>
@@ -140,9 +137,16 @@
 	    <item name="android:textColor">@color/form_label</item>
 	    <item name="android:textSize">20sp</item>
 	</style>
-	
 	<style name="VisiblePassword">
 	    <item name="android:typeface">monospace</item>
 	    <item name="android:textSize">20sp</item>
+	</style>
+	<style name="EntryPropertyName" parent="GroupText">
+	    <item name="android:background">#222222</item>
+	    <item name="android:paddingLeft">10dp</item>
+	</style>
+	<style name="EntryPropertyValue" parent="ElementText">
+	    <item name="android:layout_marginLeft">10dp</item>
+	    <item name="android:padding">5dp</item>
 	</style>
 </resources>
