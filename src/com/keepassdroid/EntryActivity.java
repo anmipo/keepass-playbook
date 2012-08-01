@@ -261,6 +261,8 @@ public class EntryActivity extends LockCloseActivity {
 				R.string.copy_username_performed);
 		setupCopyButton(R.id.copy_password_button, mEntry.getPassword(), 
 				R.string.copy_password_performed);
+		setupCopyButton(R.id.copy_url_button, mEntry.getUrl(), 
+				R.string.copy_url_performed);
 	}
 	
 	private void setupCopyButton(int id, final String value, 
