@@ -23,9 +23,10 @@
   android:layout_height="wrap_content">
     -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="wrap_content"
+  android:layout_width="400dp"
   android:layout_height="wrap_content"
-  android:orientation="vertical">
+  android:orientation="vertical"
+  android:padding="5dp">
 	<TextView android:id="@+id/text"
 	  android:layout_width="wrap_content"
 	  android:layout_height="wrap_content"
@@ -37,18 +38,21 @@
 	  android:gravity="center_horizontal"
 	  android:orientation="vertical">
 		<Button android:id="@+id/install_market"
-		  android:layout_width="200sp"
+		  android:layout_width="200dp"
 		  android:layout_height="wrap_content"
+		  style="@style/Button"
 		  android:text="@string/install_from_market"
 		/>
 		<Button android:id="@+id/install_web"
-		  android:layout_width="200sp"
+		  android:layout_width="200dp"
 		  android:layout_height="wrap_content"
+		  style="@style/Button"
 		  android:text="@string/install_from_website"
 		/>
 		<Button android:id="@+id/cancel"
-		  android:layout_width="200sp"
+		  android:layout_width="200dp"
 		  android:layout_height="wrap_content"
+		  style="@style/Button"
 		  android:text="@string/cancel"
 		/>
 	</LinearLayout>

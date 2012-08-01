@@ -18,8 +18,9 @@
   along with KeePassDroid.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="fill_parent"
-  android:layout_height="fill_parent">
+  android:layout_width="400dp"
+  android:layout_height="fill_parent"
+  android:padding="5dp">
 	<TextView android:id="@+id/about_title" 
 	  android:layout_width="wrap_content"
 	  android:layout_height="wrap_content"
@@ -94,7 +95,7 @@
   	  android:layout_height="wrap_content"
   	  android:layout_width="wrap_content"
   	  android:layout_below="@id/disclaimer"
+  	  style="@style/Button"
   	  android:layout_centerHorizontal="true"
-  	  android:text="@string/about_ok"
-  	  android:width="100sp"/>
+  	  android:text="@string/about_ok" />
 </RelativeLayout>
