@@ -18,6 +18,8 @@
   along with KeePassDroid.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="AppTheme" parent="@android:style/Theme.NoTitleBar">
+    </style>
 	<style name="GroupTextSmall" parent="android:Theme">
 		<item name="android:textColor">@color/group</item>
 		<item name="android:textSize">15sp</item>
