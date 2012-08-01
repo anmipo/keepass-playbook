@@ -20,12 +20,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="fill_parent"
   android:layout_height="wrap_content">
-    <LinearLayout android:id="@+id/header"
-      style="@style/HeaderBar">
-		<Button android:id="@+id/entry_cancel"
-		  style="@style/Button.Back"
-		  android:text="@string/back"/>
-    </LinearLayout>
+	<RelativeLayout android:id="@+id/header"
+	  android:layout_alignParentTop="true"
+	  style="@style/HeaderBar">
+	    <Button android:id="@+id/back_button"
+	      style="@style/Button.Back"		  
+	      android:text="@string/back" />
+	    <TextView android:id="@+id/title"
+		  style="@style/Header.Title" />
+	</RelativeLayout>
 	<LinearLayout android:id="@+id/footer" 
 	  style="@style/Footer">
 		<Button android:id="@+id/entry_save"

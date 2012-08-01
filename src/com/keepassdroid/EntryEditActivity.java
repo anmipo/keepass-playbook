@@ -121,6 +121,8 @@ public class EntryEditActivity extends LockCloseActivity {
 			mEntry = new PwEntryV3(db, groupId);
 			mIsNew = true;
 			
+			TextView title = (TextView) findViewById(R.id.title);
+			title.setText(R.string.add_entry);		
 		} else {
 			UUID uuid = Types.bytestoUUID(uuidBytes);
 			assert(uuid != null);
@@ -130,7 +132,7 @@ public class EntryEditActivity extends LockCloseActivity {
 			
 			fillData();
 		} 
-	
+			
 		View scrollView = findViewById(R.id.entry_scroll);
 		scrollView.setScrollBarStyle(View.SCROLLBARS_INSIDE_INSET);
 
@@ -239,15 +241,12 @@ public class EntryEditActivity extends LockCloseActivity {
 			
 		});
 		
-		// Cancel button
-		Button cancel = (Button) findViewById(R.id.entry_cancel);
-		cancel.setOnClickListener(new View.OnClickListener() {
-
+		// Back/sCancel button
+		View backButton = findViewById(R.id.back_button);
+		backButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				finish();
-				
 			}
-			
 		});
 		
 		// Respect mask password setting
