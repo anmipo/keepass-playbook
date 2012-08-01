@@ -43,7 +43,9 @@
 	  android:layout_height="fill_parent"
 	  android:layout_below="@id/header">
 		<RelativeLayout android:layout_width="fill_parent"
-		  android:layout_height="wrap_content">
+		  android:layout_height="wrap_content"
+		  android:paddingLeft="10dp"
+		  android:paddingRight="5dp">
 			<!--  Title -->	
 			<TextView android:id="@+id/entry_title_label"
 			  android:layout_width="wrap_content"
