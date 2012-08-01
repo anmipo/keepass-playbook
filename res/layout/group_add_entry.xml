@@ -24,15 +24,6 @@
 	  android:id="@+id/group_header"
 	  android:layout_width="wrap_content"
 	  android:layout_height="wrap_content"/>
-	<LinearLayout android:id="@+id/footer"
-	  style="@style/Footer">
-		<Button android:id="@+id/add_entry"
-		  style="@style/Button"
-		  android:text="@string/add_entry"/>
-		<Button android:id="@+id/add_group"
-		  style="@style/Button"
-		  android:text="@string/add_group"/>
-	</LinearLayout>
 	<ListView android:id="@android:id/list"
       android:layout_width="fill_parent"
       android:layout_height="wrap_content"

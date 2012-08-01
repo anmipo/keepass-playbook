@@ -134,8 +134,8 @@ public abstract class GroupActivity extends GroupBaseActivity {
 		Log.w(TAG, "Set view");
 
 		if ( addGroupEnabled ) {
-			// Add Group button
-			Button addGroup = (Button) findViewById(R.id.add_group);
+			// Add Group image button
+			View addGroup = findViewById(R.id.add_group);
 			addGroup.setOnClickListener(new View.OnClickListener() {
 
 				public void onClick(View v) {
@@ -145,8 +145,8 @@ public abstract class GroupActivity extends GroupBaseActivity {
 		}
 		
 		if ( addEntryEnabled ) {
-			// Add Entry button
-			Button addEntry = (Button) findViewById(R.id.add_entry);
+			// Add Entry image button
+			View addEntry = findViewById(R.id.add_entry);
 			addEntry.setOnClickListener(new View.OnClickListener() {
 	
 				public void onClick(View v) {

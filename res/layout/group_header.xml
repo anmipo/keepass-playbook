@@ -37,4 +37,16 @@
 	    style="@style/Button.Icon"
 	    android:layout_alignParentRight="true"
 	    android:layout_centerVertical="true"/>
+	<ImageButton android:id="@+id/add_group"
+		style="@style/Button.Icon"
+		android:src="@drawable/ic_add_group"
+		android:layout_toLeftOf="@id/search_button"
+		android:layout_centerVertical="true"
+		android:visibility="gone"/>
+	<ImageButton android:id="@+id/add_entry"
+		style="@style/Button.Icon"
+		android:src="@drawable/ic_add_entry"
+		android:layout_toLeftOf="@id/add_group"
+		android:layout_centerVertical="true"
+		android:visibility="gone"/>
 </RelativeLayout>

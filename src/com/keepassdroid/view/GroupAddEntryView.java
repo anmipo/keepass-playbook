@@ -42,6 +42,8 @@ public class GroupAddEntryView extends RelativeLayout {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		inflater.inflate(R.layout.group_add_entry, this);
 		
+		findViewById(R.id.add_entry).setVisibility(VISIBLE);
+		findViewById(R.id.add_group).setVisibility(VISIBLE);
 	}
 
 

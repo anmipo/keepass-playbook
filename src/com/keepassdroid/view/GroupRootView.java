@@ -22,7 +22,6 @@ package com.keepassdroid.view;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import com.android.keepass.R;
@@ -43,9 +42,7 @@ public class GroupRootView extends RelativeLayout {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		inflater.inflate(R.layout.group_add_entry, this);
 		
-		Button addEntry = (Button) findViewById(R.id.add_entry);
-		addEntry.setVisibility(INVISIBLE);
-		
+		findViewById(R.id.add_group).setVisibility(VISIBLE);
 	}
 
 

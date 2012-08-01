@@ -42,10 +42,7 @@ public class GroupViewOnlyView extends RelativeLayout {
 	private void inflate(Context context) {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		inflater.inflate(R.layout.group_add_entry, this);
-
-		// Hide the buttons
-		View footer = findViewById(R.id.footer);
-		footer.setVisibility(INVISIBLE);
+		// add group/entry buttons are invisible by default [AP]
 		
 		View list = findViewById(android.R.id.list);
 		LayoutParams lp = (RelativeLayout.LayoutParams) list.getLayoutParams();
