@@ -19,10 +19,14 @@
 -->
 <PreferenceScreen
 	xmlns:android="http://schemas.android.com/apk/res/android">
+	<com.keepassdroid.settings.BackPreference
+	    android:title="@string/back" />
 	<PreferenceScreen
 	  android:key="@string/db_key"
 	  android:title="@string/database" 
 	  android:summary="@string/menu_db_settings">
+		<com.keepassdroid.settings.BackPreference
+	    	android:title="@string/back" />
 		<Preference
 		  android:key="@string/algorithm_key"
 		  android:title="@string/algorithm"
@@ -39,6 +43,8 @@
 	  android:key="@string/app_key"
 	  android:title="@string/application"
 	  android:summary="@string/application_settings">
+		<com.keepassdroid.settings.BackPreference
+	    	android:title="@string/back" />
 		<CheckBoxPreference
 			android:key="@string/keyfile_key"
 			android:title="@string/remember_keyfile_title"
