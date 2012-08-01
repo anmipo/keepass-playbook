@@ -97,6 +97,15 @@ public class GeneratePasswordActivity extends LockCloseActivity {
 			}
 		});
 	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+        // generate some initial password, so the user could just tap "ok" [AP]
+		Button genPassButton = (Button) findViewById(R.id.generate_password_button);
+		genPassButton.performClick();
+	}
 	
     public String generatePassword() {
     	String password = "";

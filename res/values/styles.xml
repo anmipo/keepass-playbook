@@ -138,4 +138,8 @@
 	    <item name="android:textColor">@color/form_label</item>
 	    <item name="android:textSize">20sp</item>
 	</style>
+	
+	<style name="VisiblePassword">
+	    <item name="android:typeface">monospace</item>
+	</style>
 </resources>
