@@ -68,7 +68,15 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 		if (intentData != null)
 			startPath = intentData.getPath();
 		setFileName(extractFileName(startPath));
-		showDirectory(startPath);
+		
+		String startDir = extractDirectoryPart(startPath);
+		if (isAccessibleDirectory(startDir))	{
+			showDirectory(startPath);
+		} else {
+			Toast.makeText(this, R.string.error_invalid_path, 
+					Toast.LENGTH_SHORT).show();
+			showDirectory(ROOT);
+		}
 	}
 	
 	private String extractFileName(String path) {
@@ -86,13 +94,19 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 		else
 			return ROOT;
 	}
-
+	
+	/** Checks if directory content can be read */
+	private boolean isAccessibleDirectory(String dirPath) {
+		File dir = new File(dirPath);
+		return dir.canRead();
+	}
+	
 	private void showDirectory(String pathStr) {
 		String requestedDir = extractDirectoryPart(pathStr);
 		
 		// make sure the directory is accessible
 		File dir = new File(requestedDir);
-		if (!dir.canRead()) {
+		if (!isAccessibleDirectory(requestedDir)) {
 			Toast.makeText(this, R.string.error_invalid_path, 
 					Toast.LENGTH_SHORT).show();
 			return;
