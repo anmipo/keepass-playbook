@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -69,10 +70,10 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 		String startPath = ROOT;
 		if (intentData != null)
 			startPath = intentData.getPath();
-		setFileName(extractFileName(startPath));
+		setFileName(FileUtils.extractFileName(startPath));
 		
-		String startDir = extractDirectoryPart(startPath);
-		if (isAccessibleDirectory(startDir))	{
+		String startDir = FileUtils.extractDirectoryPart(startPath);
+		if (FileUtils.isReadable(startDir))	{
 			showDirectory(startPath);
 		} else {
 			Toast.makeText(this, R.string.error_invalid_path, 
@@ -80,40 +81,12 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 			showDirectory(ROOT);
 		}
 	}
-	
-	private String extractFileName(String path) {
-		if (path == null) 
-			return null;
 		
-		int pos = path.lastIndexOf(File.separatorChar);
-		if (pos > 0)
-			return path.substring(pos + 1);
-		else
-			return "";
-	}
-
-	private String extractDirectoryPart(String path) {
-		if (path == null)
-			return null;
-		
-		int pos = path.lastIndexOf(File.separatorChar);
-		if (pos > 0)
-			return path.substring(0, pos + 1);
-		else
-			return ROOT;
-	}
-	
-	/** Checks if directory content can be read */
-	private boolean isAccessibleDirectory(String dirPath) {
-		File dir = new File(dirPath);
-		return dir.canRead();
-	}
-	
 	private void showDirectory(String pathStr) {
-		String requestedDir = extractDirectoryPart(pathStr);
+		String requestedDir = FileUtils.extractDirectoryPart(pathStr);
 		
 		// make sure the directory is accessible
-		if (!isAccessibleDirectory(requestedDir)) {
+		if (!FileUtils.isReadable(requestedDir)) {
 			Toast.makeText(this, R.string.error_invalid_path, 
 					Toast.LENGTH_SHORT).show();
 			return;
@@ -197,8 +170,7 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 				return items[position];
 			}
 		}
-		private String getItemName(int position) {
-			File item = getItem(position);
+		private String getItemName(File item) {
 			if (item.isDirectory()) {
 				String name = item.equals(parent) ? ".." : item.getName(); 
 				return "[" + name + "]";
@@ -212,25 +184,43 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 		}
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
-			TextView textView;
-			if (convertView == null) {
-				textView = (TextView) getLayoutInflater().inflate(
-						android.R.layout.simple_list_item_1, null);
-				textView.setCompoundDrawablePadding(10);
+			FileViewHolder viewHolder;
+			View rowView = convertView;
+			if (rowView == null) {
+				rowView = getLayoutInflater().inflate(
+						R.layout.file_list_item, null);
+				viewHolder = new FileViewHolder();
+				viewHolder.name = (TextView) rowView.findViewById(R.id.name);
+				viewHolder.detail = (TextView) rowView.findViewById(R.id.detail);
+				viewHolder.icon = (ImageView) rowView.findViewById(R.id.icon);
+				rowView.setTag(viewHolder);
 			} else {
-				textView = (TextView) convertView;
+				viewHolder = (FileViewHolder) convertView.getTag();
 			}
-			textView.setText(getItemName(position));
 			
-			textView.setCompoundDrawablesWithIntrinsicBounds(
-					getItemIcon(position), null, null, null);
+			File item = getItem(position);
+			viewHolder.name.setText(getItemName(item));
+			viewHolder.detail.setText(getItemDetail(item));
+			viewHolder.icon.setBackgroundDrawable(getItemIcon(item));
 			
-			return textView;
+			return rowView;
 		}
 
-		private Drawable getItemIcon(int position) {
+		private String getItemDetail(File file) {
+			String detailStr; 
+			if (file.equals(parent)) {
+				detailStr = null;
+			} else {
+				detailStr = FileUtils.formatFileDate(file.lastModified()); 
+				if (file.isFile()) {
+					detailStr = FileUtils.formatFileSize(file.length()) + 
+							",   " + detailStr; 
+				}
+			}
+			return detailStr;
+		}
+		private Drawable getItemIcon(File item) {
 			Drawable result;
-			File item = getItem(position);
 			if (item.isDirectory()) {
 				result = (item.equals(parent) ? upIcon : folderIcon);
 			} else {
@@ -242,6 +232,11 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 				}
 			}
 			return result;
+		}
+		private class FileViewHolder {
+			public TextView name;
+			public TextView detail;
+			public ImageView icon;
 		}
 	}
 }
