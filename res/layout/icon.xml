@@ -24,7 +24,6 @@
   android:layout_height="wrap_content"
   android:orientation="vertical"
   android:gravity="center_horizontal" 
-  android:background="@color/icon_background"
   android:minWidth="60dp" 
   android:minHeight="60dp"
   android:padding="5dp">
