@@ -34,7 +34,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.text.InputType;
-import android.text.method.PasswordTransformationMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -54,11 +53,9 @@ import com.keepassdroid.app.App;
 import com.keepassdroid.compat.BackupManagerCompat;
 import com.keepassdroid.database.edit.LoadDB;
 import com.keepassdroid.database.edit.OnFinish;
-import com.keepassdroid.fileselect.BrowserDialog;
 import com.keepassdroid.fileselect.FileDbHelper;
 import com.keepassdroid.intents.Intents;
 import com.keepassdroid.settings.AppSettingsActivity;
-import com.keepassdroid.utils.Interaction;
 import com.keepassdroid.utils.Util;
 
 public class PasswordActivity extends LockingActivity {
@@ -203,23 +200,17 @@ public class PasswordActivity extends LockingActivity {
 		browse.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
-				if (Interaction.isIntentAvailable(PasswordActivity.this, Intents.FILE_BROWSE)) {
-					Intent i = new Intent(Intents.FILE_BROWSE);
-					
-					if (mFileName.length() > 0) {
-						File keyfile = new File(mFileName);
-						File parent = keyfile.getParentFile();
-						if (parent != null) {
-							i.setData(Uri.parse("file://" + parent.getAbsolutePath()));
-						}
+				Intent i = new Intent(Intents.FILE_BROWSE);
+				
+				if (mFileName.length() > 0) {
+					File keyfile = new File(mFileName);
+					File parent = keyfile.getParentFile();
+					if (parent != null) {
+						i.setData(Uri.parse("file://" + parent.getAbsolutePath()));
 					}
-					
-					startActivityForResult(i, FILE_BROWSE);
-				} else {
-					BrowserDialog diag = new BrowserDialog(PasswordActivity.this);
-					diag.show();
 				}
-					
+				
+				startActivityForResult(i, FILE_BROWSE);
 			}
 		});
 		setupBackButton();
