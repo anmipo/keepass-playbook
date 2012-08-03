@@ -21,14 +21,14 @@
     <string name="about_feedback">Обратная связь:</string>
     <string name="about_homepage">Домашняя страница:</string>
     <string name="about_ok">OK</string>
-    <string name="AboutText">KeePassDroid является Android версией программы KeePass</string>
+    <string name="AboutText">KeePass для BlackBerry PlayBook — это менеджер паролей KeePass (KeePassDroid), специально адаптированный для использования на BlackBerry PlayBook.</string>
     <string name="about_twitter">Твиттер:</string>
     <string name="add_entry">Добавить запись</string>
     <string name="add_group">Добавить группу</string>
     <string name="add_group_title">Добавить группу</string>
     <string name="algorithm">Алгоритм</string>
     <string name="algorithm_colon">Алгоритм:</string>
-    <string name="app_name">KeePassDroid</string>
+    <string name="app_name">KeePass</string>
     <string name="application">Программа</string>
     <string name="application_settings">Настройки программы</string>
     <string name="building_search_idx">Построение индекса поиска&#8230;</string>

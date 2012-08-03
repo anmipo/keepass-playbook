@@ -29,7 +29,7 @@
     <string name="add_group_title">添加群</string>
     <string name="algorithm">演算法</string>
     <string name="algorithm_colon">演算法：</string>
-    <string name="app_name">KeePassDroid</string>
+    <string name="app_name">KeePass</string>
     <string name="app_timeout">應用程式超時</string>
     <string name="app_timeout_summary">應用程式處於非活動時鎖定資料庫。</string>
     <string name="application">應用程式</string>
@@ -69,7 +69,7 @@
     <string name="entry_url">網址：</string>
     <string name="entry_user_name">用戶名：</string>
     <string name="error_arc4">ArcFour流密碼不被支援。</string>
-    <string name="error_can_not_handle_uri">KeePassDroid無法處理此URI。</string>
+    <string name="error_can_not_handle_uri">KeePass無法處理此URI。</string>
     <string name="error_could_not_create_group">創建群組錯誤。</string>
     <string name="error_could_not_create_parent">無法創建上級目錄。</string>
     <string name="error_database_exists">文件已存在。</string>

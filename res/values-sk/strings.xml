@@ -21,7 +21,7 @@
     <string name="about_feedback">Spätná Väzba:</string>
     <string name="about_homepage">Domovská Stránka:</string>
     <string name="about_ok">OK</string>
-    <string name="AboutText">KeePassDroid je Android verzia KeePass password manažéra.</string>
+    <string name="AboutText">KeePass for BlackBerry PlayBook je verzia KeePass (KeePassDroid) password manažéra.</string>
     <string name="about_twitter">Twitter:</string>
     <string name="accept">Prijať</string>
     <string name="add_entry">Pridať Záznam</string>
@@ -29,7 +29,7 @@
     <string name="add_group_title">Pridať Skupinu</string>
     <string name="algorithm">Algoritmus</string>
     <string name="algorithm_colon">Algoritmus:</string>
-    <string name="app_name">KeePassDroid</string>
+    <string name="app_name">KeePass</string>
     <string name="app_timeout">Časový limit aplikácie.</string>
     <string name="app_timeout_summary">Čas pred uzamknutím databázy, ak je aplikácia neaktívna.</string>
     <string name="application">Applikácia</string>
@@ -69,7 +69,7 @@
     <string name="entry_url">URL: </string>
     <string name="entry_user_name">Užívateľské meno: </string>
     <string name="error_arc4">ArcFour stream šifra nieje podporovaná.</string>
-    <string name="error_can_not_handle_uri">KeePassDroid nevie použiť túto uri.</string>
+    <string name="error_can_not_handle_uri">KeePass nevie použiť túto uri.</string>
     <string name="error_could_not_create_group">Chyba vytvárania Skupiny.</string>
     <string name="error_could_not_create_parent">Neviem vytvoriť nadradený adresár.</string>
     <string name="error_database_exists">Tento súbor už existuje.</string>

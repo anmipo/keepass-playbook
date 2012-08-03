@@ -21,7 +21,7 @@
     <string name="about_feedback">Feedback:</string>
     <string name="about_homepage">Homepage:</string>
     <string name="about_ok">OK</string>
-    <string name="AboutText">KeePass for PlayBook is an implementation of the KeePass password manager for BlackBerry PlayBook. It is based on the Android application KeePassDroid.</string>
+    <string name="AboutText">KeePass for BlackBerry PlayBook is an implementation of the KeePass (KeePassDroid) password manager.</string>
     <string name="about_twitter">Twitter:</string>
     <string name="accept">Accept</string>
     <string name="add_entry">Add entry</string>
@@ -29,7 +29,7 @@
     <string name="add_group_title">Add Group</string>
     <string name="algorithm">Algorithm</string>
     <string name="algorithm_colon">Algorithm:</string>
-    <string name="app_name">KeePass for PlayBook</string>
+    <string name="app_name">KeePass</string>
     <string name="app_timeout">Application timeout</string>
     <string name="app_timeout_summary">Time before locking database when the application is inactive.</string>
     <string name="application">Application</string>

@@ -24,7 +24,7 @@
     <string name="about_feedback">Commenti:</string>
     <string name="about_homepage">Pagina web:</string>
     <string name="about_ok">OK</string>
-    <string name="AboutText">KeePassDroid è un\'implementazione del gestore password KeePass.</string>
+    <string name="AboutText">KeePass per BlackBerry PlayBook è un\'implementazione del gestore password KeePass (KeePassDroid). </string>
     <string name="about_twitter">Twitter:</string>
     <string name="accept">Accetto</string>
     <string name="add_entry">Aggiungi voce</string>
@@ -32,7 +32,7 @@
     <string name="add_group_title">Aggiungi Gruppo</string>
     <string name="algorithm">Algoritmo</string>
     <string name="algorithm_colon">Algoritmo:</string>
-    <string name="app_name">KeePassDroid</string>
+    <string name="app_name">KeePass</string>
     <string name="app_timeout">Scadenza applicazione</string>
     <string name="app_timeout_summary">Tempo prima che venga bloccato il database quando l\'applicazione è inattiva.</string>
     <string name="application">Applicazione</string>
@@ -72,7 +72,7 @@
     <string name="entry_url">URL: </string>
     <string name="entry_user_name">Nome utente: </string>
     <string name="error_arc4">La codifica ArcFour non è supportata.</string>
-    <string name="error_can_not_handle_uri">KeePassDroid non può gestire questo URL.</string>
+    <string name="error_can_not_handle_uri">KeePass non può gestire questo URL.</string>
     <string name="error_could_not_create_group">Errore creazione gruppo.</string>
     <string name="error_could_not_create_parent">Impossibile creare la directory principale.</string>
     <string name="error_database_exists">File già esistente.</string>

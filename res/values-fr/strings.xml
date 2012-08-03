@@ -24,14 +24,14 @@
 	<string name="about_feedback">Commentaires :</string>
 	<string name="about_homepage">Site web :</string>
 	<string name="about_ok">OK</string>
-	<string name="AboutText">KeePassDroid est un portage du logiciel KeePass Password Manager. Pour l\'instant, vous devez créer une base de données avec le logiciel KeePass sur votre ordinateur puis la transférer sur la carte mémoire de votre appareil mobile.</string>
+	<string name="AboutText">KeePass pour BlackBerry PlayBook est un portage du logiciel KeePass (KeePassDroid) Password Manager.</string>
 	<string name="about_twitter">Twitter :</string>
 	<string name="add_entry">Ajouter une entrée</string>
 	<string name="add_group">Ajouter un groupe</string>
 	<string name="add_group_title">Ajouter un groupe</string>
 	<string name="algorithm">Algorithme</string>
 	<string name="algorithm_colon">Algorithme :</string>
-	<string name="app_name">KeePassDroid</string>    
+	<string name="app_name">KeePass</string>    
 	<string name="cancel">Annuler</string>    
 	<string name="ClearClipboard">Presse-papier nettoyé.</string>    
 	<string name="current_group">Groupe actuel : </string>    
@@ -52,7 +52,7 @@
 	<string name="entry_title">Nom : </string>    
 	<string name="entry_url">URL : </string>    
 	<string name="entry_user_name">Nom d\'utilisateur : </string>    
-	<string name="error_can_not_handle_uri">KeePassDroid ne peut pas gérer cette URI.</string>    
+	<string name="error_can_not_handle_uri">KeePass ne peut pas gérer cette URI.</string>    
 	<string name="error_could_not_create_group">Erreur de création de groupe.</string>    
 	<string name="error_database_exists">Ce fichier existe déjà.</string>    
 	<string name="error_database_settings">Impossible de déterminer les paramètres de base de données.</string>    
