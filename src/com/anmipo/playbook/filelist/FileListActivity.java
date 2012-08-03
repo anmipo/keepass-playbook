@@ -82,6 +82,9 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 	}
 	
 	private String extractFileName(String path) {
+		if (path == null) 
+			return null;
+		
 		int pos = path.lastIndexOf(File.separatorChar);
 		if (pos > 0)
 			return path.substring(pos + 1);
@@ -90,6 +93,9 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 	}
 
 	private String extractDirectoryPart(String path) {
+		if (path == null)
+			return null;
+		
 		int pos = path.lastIndexOf(File.separatorChar);
 		if (pos > 0)
 			return path.substring(0, pos + 1);
@@ -107,17 +113,22 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 		String requestedDir = extractDirectoryPart(pathStr);
 		
 		// make sure the directory is accessible
-		File dir = new File(requestedDir);
 		if (!isAccessibleDirectory(requestedDir)) {
 			Toast.makeText(this, R.string.error_invalid_path, 
 					Toast.LENGTH_SHORT).show();
 			return;
 		}
 
+		File dir = new File(requestedDir);
 		if (dir.isDirectory()) {
-			currentDirectory = requestedDir;
+			File parent = dir.getParentFile();
+			if (parent != null) {
+				currentDirectory = requestedDir;
+			} else {
+				currentDirectory = ROOT;
+			}
 			pathView.setText(currentDirectory);
-			listAdapter.setItems(dir.listFiles());
+			listAdapter.setItems(dir.listFiles(), parent);
 			setSelection(0);
 		} else {
 			throw new RuntimeException("strange file object");
@@ -132,41 +143,31 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 	
 	@Override
 	public void onItemClick(AdapterView<?> listView, View view, int position, long id) {
-		if (position == 0) {
-			// "go to parent" clicked
-			int pos = currentDirectory.lastIndexOf(File.separatorChar, 
-					currentDirectory.length() - 1);
-			if (pos > 0) {
-				showDirectory(currentDirectory.substring(0, pos));
-			} else {
-				showDirectory(ROOT);
-			}
+		FileAdapter adapter = (FileAdapter) listView.getAdapter(); 
+		File item = adapter.getItem(position);
+		if (item.isDirectory()) {
+			showDirectory(item.getAbsolutePath() + File.separatorChar);
 		} else {
-			// some file or folder clicked
-			FileAdapter adapter = (FileAdapter) listView.getAdapter(); 
-			File item = adapter.getFileItem(position);
-			if (item.isDirectory()) {
-				showDirectory(currentDirectory + item.getName() + File.separatorChar);
-			} else {
-				setFileName(item.getName());
-			}
+			setFileName(item.getName());
 		}
 	}
 	
 	private class FileAdapter extends BaseAdapter {
 		private File[] items;
+		private File parent;
 		private Drawable upIcon, folderIcon, fileIcon, kdbIcon; 
 		
 		public FileAdapter(Context context) {
 			items = null;
+			parent = null;
 			upIcon = getResources().getDrawable(R.drawable.ic_file_parent); 
 			folderIcon = getResources().getDrawable(R.drawable.ic_file_folder); 
 			fileIcon = getResources().getDrawable(R.drawable.ic_file_generic); 
 			kdbIcon = getResources().getDrawable(R.drawable.ic_file_kdb);
 		}
-		public void setItems(File[] items) {
+		public void setItems(File[] items, File parent) {
 			this.items = items;
-			
+			this.parent = parent;
 			Arrays.sort(this.items, new Comparator<File>() {
 				@Override
 				//sort by name, but put directories first
@@ -181,23 +182,29 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 		}
 		@Override
 		public int getCount() {
-			int nItems = (items != null) ? items.length : 0;
-			return nItems + 1; // +1 is for the "[..]" item
+			int result = 0;
+			if (items != null) 
+				result = items.length;
+			if (parent != null) 
+				result++;
+			return result;
 		}
 		@Override
-		public String getItem(int position) {
-			if (position == 0) {
-				return "[..]";
+		public File getItem(int position) {
+			if (parent != null) {
+				return (position == 0) ? parent : items[position - 1];
+			} else {
+				return items[position];
 			}
-			File item = items[position - 1];
+		}
+		private String getItemName(int position) {
+			File item = getItem(position);
 			if (item.isDirectory()) {
-				return "[" + item.getName() + "]";
+				String name = item.equals(parent) ? ".." : item.getName(); 
+				return "[" + name + "]";
 			} else {
 				return item.getName();
 			}
-		}
-		private File getFileItem(int position) {
-			return items[position - 1];
 		}
 		@Override
 		public long getItemId(int position) {
@@ -213,7 +220,7 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 			} else {
 				textView = (TextView) convertView;
 			}
-			textView.setText(getItem(position));
+			textView.setText(getItemName(position));
 			
 			textView.setCompoundDrawablesWithIntrinsicBounds(
 					getItemIcon(position), null, null, null);
@@ -223,19 +230,15 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 
 		private Drawable getItemIcon(int position) {
 			Drawable result;
-			if (position == 0) {
-				result = upIcon;
+			File item = getItem(position);
+			if (item.isDirectory()) {
+				result = (item.equals(parent) ? upIcon : folderIcon);
 			} else {
-				File item = getFileItem(position);
-				if (item.isDirectory()) {
-					result = folderIcon;
+				String fileName = item.getName();
+				if (fileName.endsWith(".kdb") || fileName.endsWith(".kdbx")) {
+					result = kdbIcon;
 				} else {
-					String fileName = item.getName();
-					if (fileName. endsWith(".kdb") || fileName.endsWith(".kdbx")) {
-						result = kdbIcon;
-					} else {
-						result = fileIcon;
-					}
+					result = fileIcon;
 				}
 			}
 			return result;
