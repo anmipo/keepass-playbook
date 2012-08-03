@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
-    
-    <RelativeLayout android:id="@+id/header"
-	  style="@style/HeaderBar">
-	  <Button
-	      android:id="@+id/back_button"
-	      style="@style/Button.Back"
-	      android:text="@string/cancel" />
-      <TextView
-          android:id="@+id/title"
-          style="@style/Header.Title"
-          android:text="@string/file_browser" />
-    </RelativeLayout>
-    
-	<TextView android:id="@+id/path"
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_below="@id/header"
-	    style="@style/ElementText"
-	    android:layout_margin="10dp" 
-	    android:text="@string/root"/>
-    <Button android:id="@+id/ok"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/path"
-        android:layout_alignParentRight="true"
-        style="@style/Button.Inline"
-        android:layout_marginRight="10dp"
-        android:text="@android:string/ok"/>
-    <EditText android:id="@+id/filename"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/path"
-        android:layout_marginLeft="10dp"
-        android:inputType="textUri"
-        android:layout_toLeftOf="@id/ok"/>
-    <ImageView android:id="@+id/divider1"
-        android:layout_width="fill_parent" 
-        android:layout_height="wrap_content"
-        android:layout_below="@id/filename"
-        android:layout_marginTop="10dp"
-        android:scaleType="fitXY"
-        android:src="@android:drawable/divider_horizontal_bright"/>
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent" >
 
-    <ListView android:id="@android:id/list"
-      android:layout_width="fill_parent"
-      android:layout_height="fill_parent"
-      android:layout_below="@id/divider1"/>
+	<RelativeLayout android:id="@+id/header"
+	  style="@style/HeaderBar">
+		<Button
+		  android:id="@+id/back_button"
+		  style="@style/Button.Back"
+		  android:text="@string/cancel" />
+		<TextView
+		  android:id="@+id/title"
+		  style="@style/Header.Title"
+		  android:text="@string/file_browser" />
+	</RelativeLayout>
+
+	<TextView android:id="@+id/path"
+	  android:layout_width="fill_parent"
+	  android:layout_height="wrap_content"
+	  android:layout_below="@id/header"
+	  style="@style/ElementText"
+	  android:layout_margin="10dp" 
+	  android:text="@string/root"/>
+	<Button android:id="@+id/ok"
+	  android:layout_width="wrap_content"
+	  android:layout_height="wrap_content"
+	  android:layout_below="@id/path"
+	  android:layout_alignParentRight="true"
+	  style="@style/Button.Inline"
+	  android:layout_marginRight="10dp"
+	  android:text="@android:string/ok"/>
+	<EditText android:id="@+id/filename"
+	  android:layout_width="fill_parent"
+	  android:layout_height="wrap_content"
+	  android:layout_below="@id/path"
+	  android:layout_marginLeft="10dp"
+	  android:inputType="textUri"
+	  android:layout_toLeftOf="@id/ok"/>
+	<ImageView android:id="@+id/divider1"
+	  android:layout_width="fill_parent" 
+	  android:layout_height="wrap_content"
+	  android:layout_below="@id/filename"
+	  android:layout_marginTop="10dp"
+	  android:scaleType="fitXY"
+	  android:src="@android:drawable/divider_horizontal_bright"/>
+
+	<ListView android:id="@android:id/list"
+	  android:layout_width="fill_parent"
+	  android:layout_height="fill_parent"
+	  android:layout_below="@id/divider1"/>
 </RelativeLayout>

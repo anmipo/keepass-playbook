@@ -23,19 +23,18 @@
 	<RelativeLayout android:id="@+id/header"
 	  android:layout_alignParentTop="true"
 	  style="@style/HeaderBar">
-	    <Button android:id="@+id/back_button"
-	      style="@style/Button.Back"		  
-	      android:text="@string/cancel" />
-	    <TextView android:id="@+id/title"
+		<Button android:id="@+id/back_button"
+		  style="@style/Button.Back"
+		  android:text="@string/cancel" />
+		<TextView android:id="@+id/title"
 		  style="@style/Header.Title" />
 
 		<Button
-		    android:id="@+id/entry_save"
-		    style="@style/Button"
-		    android:layout_alignParentRight="true"
-		    android:layout_centerVertical="true"
-		    android:text="@string/entry_save" />
-
+		  android:id="@+id/entry_save"
+		  style="@style/Button"
+		  android:layout_alignParentRight="true"
+		  android:layout_centerVertical="true"
+		  android:text="@string/entry_save" />
 	</RelativeLayout>
 
 	<ScrollView android:id="@+id/entry_scroll"
@@ -132,9 +131,9 @@
 			  android:layout_below="@id/entry_confpassword" 
 			  android:text="@string/entry_comment" />
 			<EditText android:id="@+id/entry_comment" 
-		      android:inputType="textMultiLine"
-		      android:layout_width="fill_parent"
-		      android:layout_height="wrap_content"
+			  android:inputType="textMultiLine"
+			  android:layout_width="fill_parent"
+			  android:layout_height="wrap_content"
 			  android:layout_below="@id/entry_comment_label"
 			  android:hint="@string/hint_comment"/>
 		</RelativeLayout>

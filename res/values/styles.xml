@@ -18,8 +18,8 @@
   along with KeePassDroid.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-    <style name="AppTheme" parent="@android:style/Theme.NoTitleBar">
-    </style>
+	<style name="AppTheme" parent="@android:style/Theme.NoTitleBar">
+	</style>
 	<style name="GroupTextSmall" parent="android:Theme">
 		<item name="android:textColor">@color/group</item>
 		<item name="android:textSize">15sp</item>
@@ -60,43 +60,43 @@
 		<item name="android:textColor">@color/group</item>
 	</style>
 	<style name="Button">
-	    <item name="android:textSize">20sp</item>
-	    <item name="android:background">@drawable/btn_dark</item>
-	    <item name="android:textColor">@android:color/white</item>
-	    <item name="android:paddingLeft">10dp</item>
-	    <item name="android:paddingRight">10dp</item>
-	    <item name="android:minWidth">100dp</item>
-	    <item name="android:layout_marginTop">5dp</item>
-	    <item name="android:layout_marginBottom">5dp</item>
-	    <item name="android:layout_marginLeft">5dp</item>
-	    <item name="android:layout_marginRight">5dp</item>
-	    <item name="android:layout_width">wrap_content</item>
-	    <item name="android:layout_height">43dp</item>
+		<item name="android:textSize">20sp</item>
+		<item name="android:background">@drawable/btn_dark</item>
+		<item name="android:textColor">@android:color/white</item>
+		<item name="android:paddingLeft">10dp</item>
+		<item name="android:paddingRight">10dp</item>
+		<item name="android:minWidth">100dp</item>
+		<item name="android:layout_marginTop">5dp</item>
+		<item name="android:layout_marginBottom">5dp</item>
+		<item name="android:layout_marginLeft">5dp</item>
+		<item name="android:layout_marginRight">5dp</item>
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">43dp</item>
 	</style>
 	<style name="Button.Inline">
-	    <item name="android:layout_marginTop">0dp</item>
-	    <item name="android:layout_marginBottom">0dp</item>
+		<item name="android:layout_marginTop">0dp</item>
+		<item name="android:layout_marginBottom">0dp</item>
 	</style>
 	<style name="Button.Icon" parent="Button.Inline">
 		<item name="android:minWidth">50dp</item>
 	</style>
 	<style name="Button.Copy" parent="Button.Inline">
-	    <item name="android:text">@android:string/copy</item>
+		<item name="android:text">@android:string/copy</item>
 	</style>
 	<style name="Button.Back">
-	    <item name="android:paddingLeft">5dp</item>
-	    <item name="android:paddingRight">20dp</item>
-	    <item name="android:layout_marginLeft">5dp</item>
-	    <item name="android:layout_marginRight">20dp</item>
-	    <item name="android:drawableLeft">@drawable/ic_back</item>
-	    <item name="android:drawablePadding">10dp</item>
-	    <item name="android:layout_centerVertical">true</item>
-	    <item name="android:layout_alignParentLeft">true</item>
+		<item name="android:paddingLeft">5dp</item>
+		<item name="android:paddingRight">20dp</item>
+		<item name="android:layout_marginLeft">5dp</item>
+		<item name="android:layout_marginRight">20dp</item>
+		<item name="android:drawableLeft">@drawable/ic_back</item>
+		<item name="android:drawablePadding">10dp</item>
+		<item name="android:layout_centerVertical">true</item>
+		<item name="android:layout_alignParentLeft">true</item>
 	</style>
 	<style name="Toolbar">
-	    <item name="android:layout_width">fill_parent</item>
-	    <item name="android:layout_height">wrap_content</item>
-	    <item name="android:background">@drawable/header_bar_bg</item>
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:background">@drawable/header_bar_bg</item>
 		<item name="android:textColor">@color/group</item>
 		<item name="android:height">56dp</item>
 		<item name="android:padding">2dp</item>
@@ -106,17 +106,16 @@
 	<style name="HeaderBar" parent="Toolbar">
 	</style>
 	<style name="Footer" parent="Toolbar">
-	    <item name="android:gravity">right|center_vertical</item>
-	    <item name="android:layout_alignParentBottom">true</item>
-	    
+		<item name="android:gravity">right|center_vertical</item>
+		<item name="android:layout_alignParentBottom">true</item>
 	</style>
 	<style name="Footer.Transparent">
-	    <item name="android:background">@android:color/transparent</item>
+		<item name="android:background">@android:color/transparent</item>
 	</style>
 	<!-- Parent style for header content -->
 	<style name="Header">
-	    <item name="android:layout_width">wrap_content</item>
-	    <item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
 	</style>
 	<style name="Header.Icon">
 		<item name="android:scaleType">fitXY</item>
@@ -130,24 +129,24 @@
 		<item name="android:ellipsize">end</item>
 	</style>
 	<style name="ListItem">
-   		<item name="android:textColor">@color/group</item>
+		<item name="android:textColor">@color/group</item>
 		<item name="android:textSize">20sp</item>
 		<item name="android:padding">10dp</item>
 	</style>
 	<style name="FormLabel">
-	    <item name="android:textColor">@color/form_label</item>
-	    <item name="android:textSize">20sp</item>
+		<item name="android:textColor">@color/form_label</item>
+		<item name="android:textSize">20sp</item>
 	</style>
 	<style name="VisiblePassword">
-	    <item name="android:typeface">monospace</item>
-	    <item name="android:textSize">20sp</item>
+		<item name="android:typeface">monospace</item>
+		<item name="android:textSize">20sp</item>
 	</style>
 	<style name="EntryPropertyName" parent="GroupText">
-	    <item name="android:background">#222222</item>
-	    <item name="android:paddingLeft">10dp</item>
+		<item name="android:background">#222222</item>
+		<item name="android:paddingLeft">10dp</item>
 	</style>
 	<style name="EntryPropertyValue" parent="ElementText">
-	    <item name="android:layout_marginLeft">10dp</item>
-	    <item name="android:padding">5dp</item>
+		<item name="android:layout_marginLeft">10dp</item>
+		<item name="android:padding">5dp</item>
 	</style>
 </resources>

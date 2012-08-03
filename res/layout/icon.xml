@@ -27,18 +27,18 @@
   android:minWidth="60dp" 
   android:minHeight="60dp"
   android:padding="5dp">
-  <ImageView
-    android:id="@+id/icon_image"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:src="@drawable/ic99_blank">
-  </ImageView>
-  <TextView
-    android:id="@+id/icon_text"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:gravity="center_horizontal"
-    android:textColor="@color/icon_text"
-    android:text="00">
-  </TextView>
+	<ImageView
+	  android:id="@+id/icon_image"
+	  android:layout_width="wrap_content"
+	  android:layout_height="wrap_content"
+	  android:src="@drawable/ic99_blank">
+	</ImageView>
+	<TextView
+	  android:id="@+id/icon_text"
+	  android:layout_width="wrap_content"
+	  android:layout_height="wrap_content"
+	  android:gravity="center_horizontal"
+	  android:textColor="@color/icon_text"
+	  android:text="00">
+	</TextView>
 </LinearLayout>

@@ -25,12 +25,12 @@
 	  android:layout_width="wrap_content"
 	  android:layout_height="wrap_content"/>
 	<ListView android:id="@android:id/list"
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:layout_below="@id/group_header"/>
+	  android:layout_width="fill_parent"
+	  android:layout_height="wrap_content"
+	  android:layout_below="@id/group_header"/>
 	<TextView
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:layout_below="@android:id/list"
-      android:text="@string/no_results"/>
+	  android:layout_width="fill_parent"
+	  android:layout_height="wrap_content"
+	  android:layout_below="@android:id/list"
+	  android:text="@string/no_results"/>
 </RelativeLayout>
