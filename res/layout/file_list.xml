@@ -8,7 +8,7 @@
 	  <Button
 	      android:id="@+id/back_button"
 	      style="@style/Button.Back"
-	      android:text="@string/back" />
+	      android:text="@string/cancel" />
       <TextView
           android:id="@+id/title"
           style="@style/Header.Title"
