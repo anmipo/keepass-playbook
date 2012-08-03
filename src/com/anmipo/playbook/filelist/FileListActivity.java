@@ -57,11 +57,7 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 		okButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(Intents.FILE_BROWSE);
-				currentFileName = editTextView.getText().toString();
-				intent.setData(Uri.parse("file://" + currentDirectory + currentFileName));
-				setResult(RESULT_OK, intent);
-				finish();
+				setResultAndFinish();
 			}
 		});
 		getListView().setOnItemClickListener(this);
@@ -82,6 +78,19 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 		}
 	}
 		
+	/**
+	 * Returns the current directory + name in the editor to the calling 
+	 * activity, and closes. 
+	 */
+	protected void setResultAndFinish() {
+		currentFileName = editTextView.getText().toString();
+		String uri = "file://" + currentDirectory + currentFileName;
+		Intent intent = new Intent(Intents.FILE_BROWSE);
+		intent.setData(Uri.parse(uri));
+		setResult(RESULT_OK, intent);
+		finish();
+	}
+
 	private void showDirectory(String pathStr) {
 		String requestedDir = FileUtils.extractDirectoryPart(pathStr);
 		
@@ -122,6 +131,7 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 			showDirectory(item.getAbsolutePath() + File.separatorChar);
 		} else {
 			setFileName(item.getName());
+			setResultAndFinish();
 		}
 	}
 	
