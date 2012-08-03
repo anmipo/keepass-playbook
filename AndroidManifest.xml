@@ -90,6 +90,17 @@
 		</activity>
 		<activity android:name="com.keepassdroid.GeneratePasswordActivity">
 		</activity>
+		<activity android:name="com.anmipo.playbook.filelist.FileListActivity">
+		    <intent-filter>
+		        <action android:name="org.openintents.action.PICK_FILE"/>
+		        <category android:name="android.intent.category.DEFAULT"/>
+		    </intent-filter>
+		    <intent-filter>
+		        <action android:name="org.openintents.action.PICK_FILE"/>
+		        <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="file" />
+		    </intent-filter>
+		</activity>
 		<service android:name="com.keepassdroid.services.TimeoutService"></service>
 		<meta-data android:name="com.a0soft.gphone.aTrackDog.webURL" android:value="http://keepassdroid.com" />
 	</application>
