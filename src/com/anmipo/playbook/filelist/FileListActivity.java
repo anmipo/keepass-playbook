@@ -30,13 +30,15 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 	private String currentDirectory;
 	private String currentFileName;
 	private FileAdapter listAdapter = null;
-	private EditText editText;
+	private EditText editTextView;
+	private TextView pathView;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.file_list);
-		editText = (EditText) findViewById(R.id.filename);
+		editTextView = (EditText) findViewById(R.id.filename);
+		pathView = (TextView) findViewById(R.id.path);
 		
 		listAdapter = new FileAdapter(this);
 		setListAdapter(listAdapter);
@@ -55,7 +57,7 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(Intents.FILE_BROWSE);
-				currentFileName = editText.getText().toString();
+				currentFileName = editTextView.getText().toString();
 				intent.setData(Uri.parse("file://" + currentDirectory + currentFileName));
 				setResult(RESULT_OK, intent);
 				finish();
@@ -114,6 +116,7 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 
 		if (dir.isDirectory()) {
 			currentDirectory = requestedDir;
+			pathView.setText(currentDirectory);
 			listAdapter.setItems(dir.listFiles());
 			setSelection(0);
 		} else {
@@ -123,7 +126,7 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 	
 	private void setFileName(String fileName) {
 		currentFileName = fileName;
-		editText.setText(currentFileName);		
+		editTextView.setText(currentFileName);		
 	}
 
 	

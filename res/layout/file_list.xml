@@ -4,8 +4,7 @@
     android:layout_height="fill_parent" >
     
     <RelativeLayout android:id="@+id/header"
-	  style="@style/HeaderBar"
-	  android:layout_marginBottom="10dp">
+	  style="@style/HeaderBar">
 	  <Button
 	      android:id="@+id/back_button"
 	      style="@style/Button.Back"
@@ -16,10 +15,17 @@
           android:text="@string/file_browser" />
     </RelativeLayout>
     
+	<TextView android:id="@+id/path"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/header"
+	    style="@style/ElementText"
+	    android:layout_margin="10dp" 
+	    android:text="@string/root"/>
     <Button android:id="@+id/ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/header"
+        android:layout_below="@id/path"
         android:layout_alignParentRight="true"
         style="@style/Button.Inline"
         android:layout_marginRight="10dp"
@@ -27,7 +33,7 @@
     <EditText android:id="@+id/filename"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/header"
+        android:layout_below="@id/path"
         android:layout_marginLeft="10dp"
         android:inputType="textUri"
         android:layout_toLeftOf="@id/ok"/>
