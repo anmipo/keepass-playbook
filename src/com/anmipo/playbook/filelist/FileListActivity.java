@@ -87,11 +87,19 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 	}
 
 	private void showDirectory(String pathStr) {
-		currentDirectory = extractDirectoryPart(pathStr);
-		setFileName(extractFileName(pathStr));
+		String requestedDir = extractDirectoryPart(pathStr);
 		
-		File dir = new File(currentDirectory);
+		// make sure the directory is accessible
+		File dir = new File(requestedDir);
+		if (!dir.canRead()) {
+			Toast.makeText(this, R.string.error_invalid_path, 
+					Toast.LENGTH_SHORT).show();
+			return;
+		}
+
 		if (dir.isDirectory()) {
+			currentDirectory = requestedDir;
+			setFileName(extractFileName(pathStr));
 			listAdapter.setItems(dir.listFiles());
 			setSelection(0);
 		} else {
