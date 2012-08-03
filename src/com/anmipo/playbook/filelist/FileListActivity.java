@@ -67,6 +67,7 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 		String startPath = ROOT;
 		if (intentData != null)
 			startPath = intentData.getPath();
+		setFileName(extractFileName(startPath));
 		showDirectory(startPath);
 	}
 	
@@ -99,7 +100,6 @@ public class FileListActivity extends ListActivity implements OnItemClickListene
 
 		if (dir.isDirectory()) {
 			currentDirectory = requestedDir;
-			setFileName(extractFileName(pathStr));
 			listAdapter.setItems(dir.listFiles());
 			setSelection(0);
 		} else {
