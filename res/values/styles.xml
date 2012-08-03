@@ -127,6 +127,7 @@
 		<item name="android:textColor">@color/group</item>
 		<item name="android:textSize">28sp</item>
 		<item name="android:layout_centerInParent">true</item>
+		<item name="android:ellipsize">end</item>
 	</style>
 	<style name="ListItem">
    		<item name="android:textColor">@color/group</item>

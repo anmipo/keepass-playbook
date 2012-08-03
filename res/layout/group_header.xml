@@ -22,16 +22,9 @@
     android:layout_height="wrap_content"
     style="@style/HeaderBar">
 
-    <Button android:id="@+id/back_button"
-        style="@style/Button.Back"
-        android:text="@string/back" />
-	<TextView android:id="@+id/group_name"
-	    style="@style/Header.Title"
-	    android:text="@string/root" />
-	<ImageView android:id="@+id/icon"
-	    style="@style/Header.Icon"
-	    android:layout_toLeftOf="@id/group_name"
-	    android:src="@drawable/ic99_blank" />
+	<Button android:id="@+id/back_button"
+	  style="@style/Button.Back"
+	  android:text="@string/back" />
 	<ImageButton android:id="@+id/search_button"
 	    android:src="@drawable/ic_search"
 	    style="@style/Button.Icon"
@@ -49,4 +42,19 @@
 		android:layout_toLeftOf="@id/add_group"
 		android:layout_centerVertical="true"
 		android:visibility="gone"/>
+	<LinearLayout android:id="@+id/title_block"
+	  android:layout_width="fill_parent"
+	  android:layout_height="wrap_content"
+	  android:orientation="horizontal"
+	  android:layout_centerInParent="true"
+	  android:gravity="center"
+	  android:layout_toRightOf="@id/back_button"
+	  android:layout_toLeftOf="@id/add_entry">
+		<ImageView android:id="@+id/icon"
+		  style="@style/Header.Icon"
+		  android:src="@drawable/ic99_blank" />
+		<TextView android:id="@+id/group_name"
+		  style="@style/Header.Title"
+		  android:text="@string/root" />
+	</LinearLayout>
 </RelativeLayout>

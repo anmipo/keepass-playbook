@@ -21,26 +21,34 @@
   android:id="@+id/parent"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent">
-	<!--  Title -->	
-	<RelativeLayout android:id="@+id/title_block"
+	<RelativeLayout android:id="@+id/header"
 	  android:layout_alignParentTop="true"
 	  style="@style/HeaderBar">
-	    <Button android:id="@+id/back_button"
-	      style="@style/Button.Back"		  
-	      android:text="@string/back" />
-	    <TextView android:id="@+id/entry_title"
-		  style="@style/Header.Title" />
-		<ImageView android:id="@+id/entry_icon"
-		  style="@style/Header.Icon"
-		  android:layout_toLeftOf="@id/entry_title"
-		  android:src="@drawable/ic99_blank" />
+		<Button android:id="@+id/back_button"
+		  style="@style/Button.Back"
+		  android:text="@string/back" />
+		<LinearLayout android:id="@+id/title_block"
+		  android:layout_width="fill_parent"
+		  android:layout_height="wrap_content"
+		  android:orientation="horizontal"
+		  android:layout_centerInParent="true"
+		  android:gravity="center"
+		  android:layout_toRightOf="@id/back_button"
+		  android:layout_alignParentRight="true">
+			<ImageView android:id="@+id/entry_icon"
+			  style="@style/Header.Icon"
+			  android:src="@drawable/ic01" />
+			<TextView android:id="@+id/entry_title"
+			  style="@style/Header.Title"
+			  android:text="@string/root" />
+		</LinearLayout>
 	</RelativeLayout>
 	 
 	<ScrollView android:id="@+id/entry_scroll" 
 	  android:layout_width="fill_parent"
 	  android:layout_height="fill_parent"
 	  android:layout_alignParentBottom="true"
-	  android:layout_below="@id/title_block"
+	  android:layout_below="@id/header"
 	  android:fillViewport="true"
 	  android:scrollbarStyle="insideOverlay"
 	  android:padding="0sp">
