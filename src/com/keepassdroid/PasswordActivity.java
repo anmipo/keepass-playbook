@@ -206,7 +206,7 @@ public class PasswordActivity extends LockingActivity {
 					File keyfile = new File(mFileName);
 					File parent = keyfile.getParentFile();
 					if (parent != null) {
-						i.setData(Uri.parse("file://" + parent.getAbsolutePath()));
+						i.setData(Uri.parse("file://" + parent.getAbsolutePath() + "/"));
 					}
 				}
 				
