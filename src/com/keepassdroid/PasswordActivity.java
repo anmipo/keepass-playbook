@@ -34,10 +34,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.text.InputType;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -45,6 +47,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
 import com.android.keepass.KeePass;
@@ -58,7 +61,7 @@ import com.keepassdroid.intents.Intents;
 import com.keepassdroid.settings.AppSettingsActivity;
 import com.keepassdroid.utils.Util;
 
-public class PasswordActivity extends LockingActivity {
+public class PasswordActivity extends LockingActivity implements OnEditorActionListener {
 
 	private static final int MENU_ABOUT = Menu.FIRST;
 	private static final int MENU_APP_SETTINGS = Menu.FIRST + 1;
@@ -181,6 +184,9 @@ public class PasswordActivity extends LockingActivity {
 
 		Button confirmButton = (Button) findViewById(R.id.pass_ok);
 		confirmButton.setOnClickListener(new OkClickHandler());
+
+		EditText passwordEdit = (EditText) findViewById(R.id.password);
+		passwordEdit.setOnEditorActionListener(this);
 		
 		CheckBox passwordVisibleCheck = (CheckBox) findViewById(R.id.show_password);
 		// Show or hide password
@@ -404,6 +410,18 @@ public class PasswordActivity extends LockingActivity {
 			} else {
 				displayMessage(PasswordActivity.this);
 			}
+		}
+	}
+
+	@Override
+	public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+		if (actionId == EditorInfo.IME_NULL) {
+			// Enter key was pressed
+			Button confirmButton = (Button) findViewById(R.id.pass_ok);
+			confirmButton.performClick();
+			return true;
+		} else {
+			return false;
 		}
 	}
 	
