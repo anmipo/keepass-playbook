@@ -20,13 +20,10 @@
 package com.keepassdroid;
 
 import java.io.BufferedInputStream;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.SyncFailedException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -42,10 +39,8 @@ import com.keepassdroid.database.PwEntry;
 import com.keepassdroid.database.PwGroup;
 import com.keepassdroid.database.PwGroupId;
 import com.keepassdroid.database.exception.InvalidDBException;
-import com.keepassdroid.database.exception.PwDbOutputException;
 import com.keepassdroid.database.load.Importer;
 import com.keepassdroid.database.load.ImporterFactory;
-import com.keepassdroid.database.save.PwDbOutput;
 import com.keepassdroid.icons.DrawableFactory;
 import com.keepassdroid.search.SearchDbHelper;
 
@@ -128,39 +123,6 @@ public class Database {
 		PwGroup group = searchHelper.search(this, str);
 		
 		return group;
-		
-	}
-	
-	public void SaveData() throws IOException, PwDbOutputException {
-		SaveData(mFilename);
-	}
-	
-	public void SaveData(String filename) throws IOException, PwDbOutputException {
-		File tempFile = new File(filename + ".tmp");
-		FileOutputStream fos = new FileOutputStream(tempFile);
-		//BufferedOutputStream bos = new BufferedOutputStream(fos);
-		
-		//PwDbV3Output pmo = new PwDbV3Output(pm, bos, App.getCalendar());
-		PwDbOutput pmo = PwDbOutput.getInstance(pm, fos);
-		pmo.output();
-		//bos.flush();
-		//bos.close();
-		fos.close();
-		
-		// Force data to disk before continuing
-		try {
-			fos.getFD().sync();
-		} catch (SyncFailedException e) {
-			// Ignore if fsync fails. We tried.
-		}
-		
-		File orig = new File(filename);
-		
-		if ( ! tempFile.renameTo(orig) ) {
-			throw new IOException("Failed to store database.");
-		}
-		
-		mFilename = filename;
 		
 	}
 	

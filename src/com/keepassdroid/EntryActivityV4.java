@@ -37,11 +37,6 @@ public class EntryActivityV4 extends EntryActivity {
 	}
 
 	@Override
-	protected void setupEditButtons() {
-		// No edit buttons yet
-	}
-
-	@Override
 	protected void fillData() {
 		super.fillData();
 		

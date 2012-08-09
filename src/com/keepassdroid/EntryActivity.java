@@ -95,18 +95,6 @@ public class EntryActivity extends LockCloseActivity {
 	protected void setEntryView() {
 		setContentView(R.layout.entry_view);
 	}
-	
-	protected void setupEditButtons() {
-		Button edit = (Button) findViewById(R.id.entry_edit);
-		edit.setOnClickListener(new View.OnClickListener() {
-
-			public void onClick(View v) {
-				EntryEditActivity.Launch(EntryActivity.this, mEntry);
-			}
-			
-		});
-		
-	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -140,7 +128,6 @@ public class EntryActivity extends LockCloseActivity {
 		mShowPassword = ! prefs.getBoolean(getString(R.string.maskpass_key), getResources().getBoolean(R.bool.maskpass_default));
 		fillData();
 
-		setupEditButtons();
 		setupCopyButtons();
 		setupBackButton();
 		

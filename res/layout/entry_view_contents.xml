@@ -97,7 +97,7 @@
 	  style="@style/Button.Copy" />
 
 	<!-- Comment -->
-	<TextView android:id="@id/entry_comment_label"
+	<TextView android:id="@+id/entry_comment_label"
 	  android:layout_width="fill_parent"
 	  android:layout_height="wrap_content" 
 	  android:layout_below="@id/copy_password_button"

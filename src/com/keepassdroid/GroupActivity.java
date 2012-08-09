@@ -23,7 +23,6 @@ package com.keepassdroid;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -42,10 +41,7 @@ import com.keepassdroid.database.PwGroup;
 import com.keepassdroid.database.PwGroupId;
 import com.keepassdroid.database.PwGroupV3;
 import com.keepassdroid.database.PwGroupV4;
-import com.keepassdroid.database.edit.AddGroup;
 import com.keepassdroid.view.ClickView;
-import com.keepassdroid.view.GroupAddEntryView;
-import com.keepassdroid.view.GroupRootView;
 import com.keepassdroid.view.GroupViewOnlyView;
 
 public abstract class GroupActivity extends GroupBaseActivity {
@@ -122,41 +118,11 @@ public abstract class GroupActivity extends GroupBaseActivity {
 		}
 		
 		setupButtons();
-
-		if ( addGroupEnabled && addEntryEnabled ) {
-			setContentView(new GroupAddEntryView(this));
-		} else if ( addGroupEnabled ) {
-			setContentView(new GroupRootView(this));
-		} else if ( addEntryEnabled ) {
-			throw new RuntimeException("This mode is not supported.");
-		} else {
-			setContentView(new GroupViewOnlyView(this));
-		}
+		
+		setContentView(new GroupViewOnlyView(this));
 		
 		Log.w(TAG, "Set view");
 
-		if ( addGroupEnabled ) {
-			// Add Group image button
-			View addGroup = findViewById(R.id.add_group);
-			addGroup.setOnClickListener(new View.OnClickListener() {
-
-				public void onClick(View v) {
-					GroupEditActivity.Launch(GroupActivity.this, mGroup);
-				}
-			});
-		}
-		
-		if ( addEntryEnabled ) {
-			// Add Entry image button
-			View addEntry = findViewById(R.id.add_entry);
-			addEntry.setOnClickListener(new View.OnClickListener() {
-	
-				public void onClick(View v) {
-					EntryEditActivity.Launch(GroupActivity.this, mGroup);
-				}
-			});
-		}
-		
 		setGroupTitle();
 		setGroupIcon();
 
@@ -198,26 +164,5 @@ public abstract class GroupActivity extends GroupBaseActivity {
 		ClickView cv = (ClickView) acmi.targetView;
 		
 		return cv.onContextItemSelected(item);
-	}
-	
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data)
-	{
-		switch (resultCode)
-		{
-			case Activity.RESULT_OK:
-				String GroupName = data.getExtras().getString(GroupEditActivity.KEY_NAME);
-				int GroupIconID = data.getExtras().getInt(GroupEditActivity.KEY_ICON_ID);
-				GroupActivity act = GroupActivity.this;
-				Handler handler = new Handler();
-				AddGroup task = AddGroup.getInstance(App.getDB(), GroupName, GroupIconID, mGroup, act.new RefreshTask(handler), false);
-				ProgressTask pt = new ProgressTask(act, task, R.string.saving_database);
-				pt.run();
-				break;
-
-			case Activity.RESULT_CANCELED:
-			default:
-				break;
-		}
 	}
 }

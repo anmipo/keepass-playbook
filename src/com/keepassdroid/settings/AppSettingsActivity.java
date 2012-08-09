@@ -27,11 +27,9 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.keepass.R;
-import com.keepassdroid.Database;
 import com.keepassdroid.LockingClosePreferenceActivity;
 import com.keepassdroid.app.App;
 import com.keepassdroid.compat.BackupManagerCompat;
-import com.keepassdroid.database.PwEncryptionAlgorithm;
 import com.keepassdroid.fileselect.FileDbHelper;
 
 public class AppSettingsActivity extends LockingClosePreferenceActivity {
@@ -66,28 +64,7 @@ public class AppSettingsActivity extends LockingClosePreferenceActivity {
 				return true;
 			}
 		});
-		
-		Database db = App.getDB();
-		if ( db.Loaded() && db.pm.appSettingsEnabled() ) {
-			Preference rounds = findPreference(getString(R.string.rounds_key));
-			rounds.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
 				
-				public boolean onPreferenceChange(Preference preference, Object newValue) {
-					setRounds(App.getDB(), preference);
-					return true;
-				}
-			});
-			
-			setRounds(db, rounds);
-			
-			Preference algorithm = findPreference(getString(R.string.algorithm_key));
-			setAlgorithm(db, algorithm);
-			
-		} else {
-			Preference dbSettings = findPreference(getString(R.string.db_key));
-			dbSettings.setEnabled(false);
-		}
-		
 		backupManager = new BackupManagerCompat(this);
 		
 	}
@@ -98,22 +75,4 @@ public class AppSettingsActivity extends LockingClosePreferenceActivity {
 		
 		super.onStop();
 	}
-
-	private void setRounds(Database db, Preference rounds) {
-		rounds.setSummary(Long.toString(db.pm.getNumRounds()));
-	}
-	
-	private void setAlgorithm(Database db, Preference algorithm) {
-		int resId;
-		if ( db.pm.getEncAlgorithm() == PwEncryptionAlgorithm.Rjindal ) {
-			resId = R.string.rijndael;
-		} else  {
-			resId = R.string.twofish;
-		}
-		
-		algorithm.setSummary(resId);
-	}
-	
-	
-
 }

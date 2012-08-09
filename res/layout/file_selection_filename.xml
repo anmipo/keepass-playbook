@@ -51,11 +51,4 @@
 	  android:layout_alignParentRight="true"
 	  android:layout_below="@id/file_filename"
 	  style="@style/Button"/>
-	<Button android:id="@+id/create"
-	  android:text="@string/menu_create"
-	  android:layout_height="wrap_content"
-	  android:layout_width="wrap_content"
-	  android:layout_below="@id/file_filename"
-	  android:layout_toLeftOf="@id/open"
-	  style="@style/Button"/>
 </RelativeLayout>

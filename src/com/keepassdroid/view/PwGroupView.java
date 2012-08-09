@@ -47,11 +47,7 @@ public class PwGroupView extends ClickView {
 	protected static final int MENU_CANCEL = Menu.FIRST + 10;
 	
 	public static PwGroupView getInstance(GroupBaseActivity act, PwGroup pw) {
-		if ( pw instanceof PwGroupV3 ) {
-			return new PwGroupViewV3(act, pw);
-		} else {
-			return new PwGroupView(act, pw);
-		}
+		return new PwGroupView(act, pw);
 	}
 	
 	protected PwGroupView(GroupBaseActivity act, PwGroup pw) {

@@ -48,11 +48,7 @@ public class PwEntryView extends ClickView {
 	protected static final int MENU_CANCEL = Menu.FIRST + 10;
 	
 	public static PwEntryView getInstance(GroupBaseActivity act, PwEntry pw, int pos) {
-		if ( pw instanceof PwEntryV3 ) {
-			return new PwEntryViewV3(act, (PwEntryV3) pw, pos);
-		} else {
-			return new PwEntryView(act, pw, pos);
-		}
+		return new PwEntryView(act, pw, pos);
 	}
 	
 	protected PwEntryView(GroupBaseActivity act, PwEntry pw, int pos) {

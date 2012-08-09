@@ -22,7 +22,6 @@ package com.keepassdroid.fileselect;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.net.URLDecoder;
 
 import android.app.ListActivity;
@@ -32,13 +31,13 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ContextMenu.ContextMenuInfo;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.Button;
 import android.widget.CursorAdapter;
 import android.widget.EditText;
@@ -47,20 +46,13 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.AdapterView.AdapterContextMenuInfo;
 
 import com.android.keepass.R;
 import com.keepassdroid.AboutDialog;
-import com.keepassdroid.GroupActivity;
 import com.keepassdroid.PasswordActivity;
-import com.keepassdroid.ProgressTask;
-import com.keepassdroid.SetPasswordDialog;
 import com.keepassdroid.app.App;
-import com.keepassdroid.database.edit.CreateDB;
-import com.keepassdroid.database.edit.FileOnFinish;
 import com.keepassdroid.intents.Intents;
 import com.keepassdroid.settings.AppSettingsActivity;
-import com.keepassdroid.utils.Interaction;
 import com.keepassdroid.utils.Util;
 import com.keepassdroid.view.FileNameView;
 
@@ -109,78 +101,6 @@ public class FileSelectActivity extends ListActivity {
 
 			}
 		});
-
-		// Create button
-		Button createButton = (Button) findViewById(R.id.create);
-		createButton.setOnClickListener(new View.OnClickListener() {
-
-			public void onClick(View v) {
-				String filename = Util.getEditText(FileSelectActivity.this,
-						R.id.file_filename);
-
-				// Make sure file name exists
-				if (filename.length() == 0) {
-					Toast
-							.makeText(FileSelectActivity.this,
-									R.string.error_filename_required,
-									Toast.LENGTH_LONG).show();
-					return;
-				}
-
-				// Try to create the file
-				File file = new File(filename);
-				try {
-					if (file.exists()) {
-						Toast.makeText(FileSelectActivity.this,
-								R.string.error_database_exists,
-								Toast.LENGTH_LONG).show();
-						return;
-					}
-					File parent = file.getParentFile();
-					
-					if ( parent == null || (parent.exists() && ! parent.isDirectory()) ) {
-						Toast.makeText(FileSelectActivity.this,
-								R.string.error_invalid_path,
-								Toast.LENGTH_LONG).show();
-						return;
-					}
-					
-					if ( ! parent.exists() ) {
-						// Create parent dircetory
-						if ( ! parent.mkdirs() ) {
-							Toast.makeText(FileSelectActivity.this,
-									R.string.error_could_not_create_parent,
-									Toast.LENGTH_LONG).show();
-							return;
-							
-						}
-					}
-					
-					file.createNewFile();
-				} catch (IOException e) {
-					Toast.makeText(
-							FileSelectActivity.this,
-							getText(R.string.error_file_not_create) + " "
-									+ e.getLocalizedMessage(),
-							Toast.LENGTH_LONG).show();
-					return;
-				}
-
-				// Prep an object to collect a password once the database has
-				// been created
-				CollectPassword password = new CollectPassword(
-						new LaunchGroupActivity(filename));
-
-				// Create the new database
-				CreateDB create = new CreateDB(filename, password, true);
-				ProgressTask createTask = new ProgressTask(
-						FileSelectActivity.this, create,
-						R.string.progress_create);
-				createTask.run();
-
-			}
-
-		});
 		
 		ImageButton browseButton = (ImageButton) findViewById(R.id.browse_button);
 		browseButton.setOnClickListener(new View.OnClickListener() {
@@ -211,46 +131,6 @@ public class FileSelectActivity extends ListActivity {
 				}
 			}
 		}
-	}
-
-	private class LaunchGroupActivity extends FileOnFinish {
-		private String mFilename;
-
-		public LaunchGroupActivity(String filename) {
-			super(null);
-
-			mFilename = filename;
-		}
-
-		@Override
-		public void run() {
-			if (mSuccess) {
-				// Add to recent files
-				FileDbHelper dbHelper = App.fileDbHelper;
-
-				dbHelper.createFile(mFilename, getFilename());
-
-				GroupActivity.Launch(FileSelectActivity.this);
-
-			} else {
-				File file = new File(mFilename);
-				file.delete();
-			}
-		}
-	}
-
-	private class CollectPassword extends FileOnFinish {
-
-		public CollectPassword(FileOnFinish finish) {
-			super(finish);
-		}
-
-		@Override
-		public void run() {
-			SetPasswordDialog password = new SetPasswordDialog(FileSelectActivity.this, mOnFinish);
-			password.show();
-		}
-
 	}
 
 	private void fillData() {

@@ -43,11 +43,6 @@
 			  style="@style/Header.Title"
 			  android:text="@string/root" />
 		</LinearLayout>
-		<Button android:id="@id/entry_edit"
-		  style="@style/Button"
-		  android:layout_alignParentRight="true"
-		  android:layout_centerVertical="true"
-		  android:text="@string/menu_edit"/>
 	</RelativeLayout>
 
 	<ScrollView android:id="@+id/entry_scroll" 

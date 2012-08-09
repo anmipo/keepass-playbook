@@ -19,7 +19,6 @@
  */
 package com.keepassdroid;
 
-
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
@@ -48,7 +47,7 @@ public abstract class GroupBaseActivity extends LockCloseListActivity {
 	public static final String KEY_MODE = "mode";
 	
 	protected static final int MENU_LOCK = Menu.FIRST + 1;
-	protected static final int MENU_CHANGE_MASTER_KEY = Menu.FIRST + 3;
+	protected static final int MENU_SEARCH = Menu.FIRST + 2;
 	protected static final int MENU_APP_SETTINGS = Menu.FIRST + 4;
 	protected static final int MENU_SORT = Menu.FIRST + 5;
 	
@@ -146,9 +145,6 @@ public abstract class GroupBaseActivity extends LockCloseListActivity {
 		menu.add(0, MENU_APP_SETTINGS, 0, R.string.menu_app_settings);
 		menu.findItem(MENU_APP_SETTINGS).setIcon(android.R.drawable.ic_menu_preferences);
 		
-		menu.add(0, MENU_CHANGE_MASTER_KEY, 0, R.string.menu_change_key);
-		menu.findItem(MENU_CHANGE_MASTER_KEY).setIcon(android.R.drawable.ic_menu_manage);
-
 		menu.add(0, MENU_SORT, 0, R.string.sort_name);
 		menu.findItem(MENU_SORT).setIcon(android.R.drawable.ic_menu_sort_by_size);
 		
@@ -194,10 +190,6 @@ public abstract class GroupBaseActivity extends LockCloseListActivity {
 			AppSettingsActivity.Launch(this);
 			return true;
 
-		case MENU_CHANGE_MASTER_KEY:
-			setPassword();
-			return true;
-			
 		case MENU_SORT:
 			toggleSort();
 			return true;
@@ -227,12 +219,6 @@ public abstract class GroupBaseActivity extends LockCloseListActivity {
 		
 	}
 
-	private void setPassword() {
-		SetPasswordDialog dialog = new SetPasswordDialog(this);
-		
-		dialog.show();
-	}
-	
 	public class RefreshTask extends OnFinish {
 		public RefreshTask(Handler handler) {
 			super(handler);
@@ -247,23 +233,4 @@ public abstract class GroupBaseActivity extends LockCloseListActivity {
 			}
 		}
 	}
-	
-	public class AfterDeleteGroup extends OnFinish {
-		public AfterDeleteGroup(Handler handler) {
-			super(handler);
-		}
-
-		@Override
-		public void run() {
-			if ( mSuccess) {
-				refreshIfDirty();
-			} else {
-				mHandler.post(new UIToastTask(GroupBaseActivity.this, "Unrecoverable error: " + mMessage));
-				App.setShutdown();
-				finish();
-			}
-		}
-
-	}
-	
 }

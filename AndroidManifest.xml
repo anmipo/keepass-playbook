@@ -76,10 +76,6 @@
 		</activity>
 		<activity android:name="com.keepassdroid.LockingActivity">
 		</activity>
-		<activity android:name="com.keepassdroid.EntryEditActivity" android:configChanges="orientation|keyboardHidden">
-		</activity>
-		<activity android:name="com.keepassdroid.GroupEditActivity" android:theme="@android:style/Theme.Dialog"></activity>
-		<activity android:name="com.keepassdroid.IconPickerActivity"></activity>
 		<activity android:name="com.keepassdroid.search.SearchResults" android:launchMode="standard">
 		    <intent-filter>
 			    <action android:name="android.intent.action.SEARCH" />
@@ -88,8 +84,6 @@
 			<meta-data android:name="android.app.searchable" android:resource="@xml/searchable" />
 		</activity>
 		<activity android:name="com.keepassdroid.settings.AppSettingsActivity">
-		</activity>
-		<activity android:name="com.keepassdroid.GeneratePasswordActivity">
 		</activity>
 		<activity android:name="com.anmipo.playbook.filelist.FileListActivity">
 		    <intent-filter>
