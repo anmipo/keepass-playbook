@@ -148,5 +148,6 @@
 	<style name="EntryPropertyValue" parent="ElementText">
 		<item name="android:layout_marginLeft">10dp</item>
 		<item name="android:padding">5dp</item>
+		<item name="android:textColor">@android:color/primary_text_dark_nodisable</item>
 	</style>
 </resources>
