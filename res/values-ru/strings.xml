@@ -23,7 +23,7 @@
     <string name="about_feedback">Обратная связь:</string>
     <string name="about_homepage">Домашняя страница:</string>
     <string name="about_ok">OK</string>
-    <string name="AboutText">KeePass для BlackBerry PlayBook — это менеджер паролей KeePass (KeePassDroid), специально адаптированный для использования на BlackBerry PlayBook.</string>
+    <string name="AboutText">KeePass для BlackBerry PlayBook — это менеджер паролей KeePass, специально адаптированный для использования на BlackBerry PlayBook.</string>
     <string name="about_twitter">Твиттер:</string>
     <string name="add_entry">Добавить запись</string>
     <string name="add_group">Добавить группу</string>
@@ -46,6 +46,7 @@
     <string name="database">База данных</string>
     <string name="decrypting_db">Дешифровка базы данных&#8230;</string>
     <string name="decrypting_entry">Расшифровка записи</string>
+    <string name="disclaimer_formal">KeePass для BlackBerry PlayBook Copyright 2012 Андрей Поплетеев (на основе KeePassDroid, Copyright 2009&#8211;2012 Brian Pellin) поставляется БЕЗ КАКИХ-ЛИБО ГАРАНИЙ. Это свободное программное обеспечение, вы можете распространять его на условиях лицензии GPL версии 2 или выше.</string>
     <string name="enter_filename">Введите название базы данных:</string>
     <string name="entry_accessed">Доступ:</string>
     <string name="entry_and_or">Введите пароль и/или выберите файл-ключ:</string>
