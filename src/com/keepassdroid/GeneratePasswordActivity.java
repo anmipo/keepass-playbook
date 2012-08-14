@@ -1,6 +1,7 @@
 /*
  * Copyright 2010 Tolga Onbay, Brian Pellin.
- *     
+ * Modifications for BlackBerry PlayBook - Copyright 2012 Andrei Popleteev.
+ *      
  * This file is part of KeePassDroid.
  *
  *  KeePassDroid is free software: you can redistribute it and/or modify

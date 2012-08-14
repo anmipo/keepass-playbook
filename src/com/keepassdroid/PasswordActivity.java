@@ -1,5 +1,6 @@
 /*
  * Copyright 2009-2011 Brian Pellin.
+ * Modifications for BlackBerry PlayBook - Copyright 2012 Andrei Popleteev.
  *     
  * This file is part of KeePassDroid.
  *

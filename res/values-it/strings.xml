@@ -18,7 +18,7 @@
   along with KeePassDroid.  If not, see <http://www.gnu.org/licenses/>.
 
   Italian translation by Diego Pierotto
-
+  Modifications for BlackBerry PlayBook - Copyright 2012 Andrei Popleteev.
 -->
 <resources>
     <string name="about_feedback">Commenti:</string>

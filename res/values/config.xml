@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
  Copyright 2009-2011 Brian Pellin.
+ Modifications for BlackBerry PlayBook - Copyright 2012 Andrei Popleteev.  
      
  This file is part of KeePassDroid.
 
@@ -15,7 +16,7 @@
   GNU General Public License for more details.
 
   You should have received a copy of the GNU General Public License
-  along with KeePassDroid.  If not, see <http://www.gnu.org/licenses/>.
+  along with KeePassDroid.  If not, see <http://www.gnu.org/licenses/>. 
 -->
 <resources>
     <string name="default_file_path">/accounts/1000/shared/documents/keepass.kdb</string>

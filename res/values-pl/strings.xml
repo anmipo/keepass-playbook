@@ -15,6 +15,8 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with KeePassDroid. If not, see <http://www.gnu.org/licenses/>.
+
+Modifications for BlackBerry PlayBook - Copyright 2012 Andrei Popleteev.
 -->
 <resources>
     <string name="about_feedback">Feedback:</string>
