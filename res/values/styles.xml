@@ -20,7 +20,13 @@
 -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 	<style name="AppTheme" parent="@android:style/Theme.NoTitleBar">
+	    <item name="android:windowBackground">@drawable/background</item>
+        <item name="android:listViewStyle">@style/TransparentListView</item>
 	</style>
+    <style name="TransparentListView" parent="@android:style/Widget.ListView">
+        <item name="android:cacheColorHint">@android:color/transparent</item>
+    </style>
+
 	<style name="GroupTextSmall" parent="android:Theme">
 		<item name="android:textColor">@color/group</item>
 		<item name="android:textSize">15sp</item>
@@ -143,11 +149,12 @@
 		<item name="android:textSize">20sp</item>
 	</style>
 	<style name="EntryPropertyName" parent="GroupText">
-		<item name="android:background">#222222</item>
+		<item name="android:background">#40000000</item>
+	    <item name="android:textStyle">bold</item>
 		<item name="android:paddingLeft">10dp</item>
 	</style>
 	<style name="EntryPropertyValue" parent="ElementText">
-		<item name="android:layout_marginLeft">10dp</item>
+		<item name="android:layout_marginLeft">20dp</item>
 		<item name="android:padding">5dp</item>
 		<item name="android:textColor">@android:color/primary_text_dark_nodisable</item>
 	</style>
