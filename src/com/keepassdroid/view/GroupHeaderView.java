@@ -25,13 +25,11 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
-import com.android.keepass.KeePass;
 import com.android.keepass.R;
-import com.keepassdroid.GroupActivity;
+import com.keepassdroid.search.SearchDialog;
 
 public class GroupHeaderView extends RelativeLayout {
 
@@ -64,7 +62,10 @@ public class GroupHeaderView extends RelativeLayout {
 			searchButton.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					((Activity)getContext()).onSearchRequested();
+					//((Activity)getContext()).onSearchRequested();
+					SearchDialog dialog = new SearchDialog(
+							GroupHeaderView.this.getContext());
+					dialog.show();
 				}
 			});
 		}
