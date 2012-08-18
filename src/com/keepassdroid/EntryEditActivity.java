@@ -26,7 +26,6 @@ import java.util.Date;
 import java.util.UUID;
 
 import android.app.Activity;
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -63,7 +62,6 @@ public class EntryEditActivity extends LockCloseActivity {
 	public static final String KEY_ENTRY = "entry";
 	public static final String KEY_PARENT = "parent";
 
-	private static final int MENU_DONATE = Menu.FIRST;
 	private static final int MENU_PASS = Menu.FIRST + 1;
 	
 	public static final int RESULT_OK_ICON_PICKER = 1000;
@@ -292,9 +290,6 @@ public class EntryEditActivity extends LockCloseActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
 		
-		menu.add(0, MENU_DONATE, 0, R.string.menu_donate);
-		menu.findItem(MENU_DONATE).setIcon(android.R.drawable.ic_menu_share);
-
 		menu.add(0, MENU_PASS, 0, R.string.show_password);
 		menu.findItem(MENU_PASS).setIcon(android.R.drawable.ic_menu_view);
 		
@@ -303,15 +298,6 @@ public class EntryEditActivity extends LockCloseActivity {
 	
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch ( item.getItemId() ) {
-		case MENU_DONATE:
-			try {
-				Util.gotoUrl(this, R.string.donate_url);
-			} catch (ActivityNotFoundException e) {
-				Toast.makeText(this, R.string.error_failed_to_launch_link, Toast.LENGTH_LONG).show();
-				return false;
-			}
-			
-			return true;
 		case MENU_PASS:
 			if ( mShowPassword ) {
 				item.setTitle(R.string.menu_hide_password);
