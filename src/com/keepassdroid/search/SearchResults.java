@@ -22,8 +22,11 @@ package com.keepassdroid.search;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 
 import com.android.keepass.KeePass;
+import com.android.keepass.R;
 import com.keepassdroid.Database;
 import com.keepassdroid.GroupBaseActivity;
 import com.keepassdroid.PwGroupListAdapter;
@@ -70,6 +73,9 @@ public class SearchResults extends GroupBaseActivity {
 			setContentView(new GroupViewOnlyView(this));
 		}
 		
+		EditText searchEdit = (EditText) findViewById(R.id.search_text);
+		searchEdit.setVisibility(View.GONE);
+
 		setGroupTitle();
 		
 		setListAdapter(new PwGroupListAdapter(this, mGroup));
