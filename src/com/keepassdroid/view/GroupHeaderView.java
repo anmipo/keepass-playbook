@@ -21,17 +21,27 @@
 package com.keepassdroid.view;
 
 import android.app.Activity;
+import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.util.AttributeSet;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
 
 import com.android.keepass.R;
-import com.keepassdroid.search.SearchDialog;
+import com.keepassdroid.search.SearchResults;
+import com.keepassdroid.utils.EmptyUtils;
 
 public class GroupHeaderView extends RelativeLayout {
+
+	private EditText queryEdit;
 
 	public GroupHeaderView(Context context) {
 		this(context, null);
@@ -41,10 +51,10 @@ public class GroupHeaderView extends RelativeLayout {
 		super(context, attrs);
 		
 		inflate(context);
-		setupButtons();
+		setupControls();
 	}
 	
-	private void setupButtons() {
+	private void setupControls() {
 		Button backButton = (Button) findViewById(R.id.back_button);
 		if (backButton != null) {
 			backButton.setOnClickListener(new OnClickListener() {
@@ -56,26 +66,33 @@ public class GroupHeaderView extends RelativeLayout {
 				}
 			});
 		}
-		
-		View searchButton = findViewById(R.id.search_button);
-		if (searchButton != null) {
-			searchButton.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					//((Activity)getContext()).onSearchRequested();
-					SearchDialog dialog = new SearchDialog(
-							GroupHeaderView.this.getContext());
-					dialog.show();
+		queryEdit = (EditText) findViewById(R.id.search_text);
+		queryEdit.requestFocus();
+		queryEdit.setOnEditorActionListener(new OnEditorActionListener() {
+			@Override
+			public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+				boolean handled = false;
+				if (actionId == EditorInfo.IME_NULL) { // if Enter pressed
+					String query = queryEdit.getText().toString();
+					if (!EmptyUtils.isNullOrEmpty(query)) {
+						performSearch(query);
+						handled = true;
+					}
 				}
-			});
-		}
+				return handled;
+			}
+		});
 	}
-
+	private void performSearch(String query) {		
+		Context ctx = getContext();
+		Intent intent = new Intent(ctx, SearchResults.class);
+		intent.setAction(Intent.ACTION_SEARCH);
+		intent.putExtra(SearchManager.QUERY, query);
+		ctx.startActivity(intent);
+	}
+	
 	private void inflate(Context context) {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		inflater.inflate(R.layout.group_header, this);
-		
 	}
-
-
 }
