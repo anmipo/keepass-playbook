@@ -22,9 +22,13 @@
 	<style name="AppTheme" parent="@android:style/Theme.NoTitleBar">
 	    <item name="android:windowBackground">@drawable/background</item>
         <item name="android:listViewStyle">@style/TransparentListView</item>
+        <item name="android:editTextStyle">@style/RoundEditText</item>
 	</style>
     <style name="TransparentListView" parent="@android:style/Widget.ListView">
         <item name="android:cacheColorHint">@android:color/transparent</item>
+    </style>
+    <style name="RoundEditText" parent="@android:style/Widget.EditText">
+        <item name="android:background">@drawable/edit_bg</item>
     </style>
 
 	<style name="GroupTextSmall" parent="android:Theme">
