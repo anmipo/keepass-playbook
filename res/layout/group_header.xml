@@ -36,7 +36,8 @@
 	  android:layout_centerVertical="true"
 	  android:singleLine="true"
 	  android:selectAllOnFocus="true"
-	  android:hint="@android:string/search_go"/>
+	  android:hint="@android:string/search_go"
+	  android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaa"/>
 	<ImageButton android:id="@+id/add_group"
 	  style="@style/Button.Icon"
 	  android:src="@drawable/ic_add_group"
