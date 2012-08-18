@@ -100,7 +100,7 @@
 		<item name="android:layout_centerVertical">true</item>
 		<item name="android:layout_alignParentLeft">true</item>
 	</style>
-	<style name="Toolbar">
+	<style name="HeaderBar">
 		<item name="android:layout_width">fill_parent</item>
 		<item name="android:layout_height">wrap_content</item>
 		<item name="android:background">@drawable/header_bar_bg</item>
@@ -109,17 +109,7 @@
 		<item name="android:padding">2dp</item>
 		<item name="android:textSize">28sp</item>
 	</style>
-	
-	<style name="HeaderBar" parent="Toolbar">
-	</style>
-	<style name="Footer" parent="Toolbar">
-		<item name="android:gravity">right|center_vertical</item>
-		<item name="android:layout_alignParentBottom">true</item>
-	</style>
-	<style name="Footer.Transparent">
-		<item name="android:background">@android:color/transparent</item>
-	</style>
-	<!-- Parent style for header content -->
+	<!-- Parent style for header children -->
 	<style name="Header">
 		<item name="android:layout_width">wrap_content</item>
 		<item name="android:layout_height">wrap_content</item>
