@@ -42,8 +42,6 @@ public class GroupRootView extends RelativeLayout {
 	private void inflate(Context context) {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		inflater.inflate(R.layout.group_add_entry, this);
-		
-		findViewById(R.id.add_group).setVisibility(VISIBLE);
 	}
 
 
