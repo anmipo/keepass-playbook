@@ -37,6 +37,7 @@
     <string name="app_timeout_summary">Tempo prima che venga bloccato il database quando l\'applicazione è inattiva.</string>
     <string name="application">Applicazione</string>
     <string name="application_settings">Impostazioni Applicazione</string>
+    <string name="back">Indietro</string>
     <string name="brackets">Parentesi</string>
     <string name="browser_intall_text">Sfogliare i file richiede l\'applicazione Gestore File di Open Intents, clicca sotto per installarlo. A causa di alcune stranezze nel gestore file, la prima volta la navigazione potrebbe non funzionare correttamente.</string>
     <string name="building_search_idx">Creazione indice di ricerca&#8230;</string>
@@ -44,8 +45,12 @@
     <string name="ClearClipboard">Appunti eliminati.</string>
     <string name="clipboard_timeout">Scadenza appunti</string>
     <string name="clipboard_timeout_summary">Tempo prima di eliminare gli appunti dopo la copia del nome file o password</string>
+    <string name="copy_entry_performed">Valore copiato</string>
     <string name="copy_username">Copia nome utente negli appunti</string>
+    <string name="copy_username_performed">Nome utente copiato</string>
     <string name="copy_password">Copia password negli appunti</string>
+    <string name="copy_password_performed">Password copiato</string>
+    <string name="copy_url_performed">URL copiato</string>
     <string name="creating_db_key">Creazione file chiave database&#8230;</string>
     <string name="current_group">Gruppo attuale: </string>
     <string name="current_group_root">Gruppo attuale: Principale</string>
@@ -118,6 +123,7 @@
     <string name="maskpass_title">Maschera password</string>
     <string name="maskpass_summary">Nascondi le password in modo predefinito</string>
     <string name="menu_about">Info</string>
+    <string name="menu_cancel">Chiudere il menu</string>
     <string name="menu_change_key">Modifica chiave Principale</string>
     <string name="menu_copy_pass">Copia Password</string>
     <string name="menu_copy_user">Copia Utente</string>

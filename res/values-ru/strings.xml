@@ -33,13 +33,18 @@
     <string name="app_name">KeePass</string>
     <string name="application">Программа</string>
     <string name="application_settings">Настройки программы</string>
+    <string name="back">Назад</string>
     <string name="building_search_idx">Построение индекса поиска&#8230;</string>
     <string name="cancel">Отмена</string>
     <string name="ClearClipboard">Буфер обмена очищен.</string>
     <string name="clipboard_timeout">Таймаут буфера обмена</string>
     <string name="clipboard_timeout_summary">Время через которое будет очищен буфер обмена после копирования логина или пароля</string>
+    <string name="copy_entry_performed">Запись скопирована в буфер обмена</string>
     <string name="copy_username">Копировать логин в буфер обмена</string>
+    <string name="copy_username_performed">Логин скопирован в буфен обмена</string>
     <string name="copy_password">Копировать пароль в буфер обмена</string>
+    <string name="copy_password_performed">Пароль скопирован в буфен обмена</string>
+    <string name="copy_url_performed">Ссылка скопирована в буфер обмена</string>
     <string name="creating_db_key">Создание ключа базы данных&#8230;</string>
     <string name="current_group">Текущая группа: </string>
     <string name="current_group_root">Текушая группа: корень</string>
@@ -99,6 +104,7 @@
     <string name="maskpass_title">Маска пароля</string>
     <string name="maskpass_summary">Скрывать пароль по умолчанию</string>
     <string name="menu_about">О программе</string>
+    <string name="menu_cancel">Закрыть меню</string>
     <string name="menu_change_key">Изменить мастер-ключ</string>
     <string name="menu_copy_pass">Скопировать пароль</string>
     <string name="menu_copy_user">Скопировать логин</string>
