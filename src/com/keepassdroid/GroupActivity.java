@@ -55,8 +55,6 @@ public abstract class GroupActivity extends GroupBaseActivity {
 	protected boolean addGroupEnabled = false;
 	protected boolean addEntryEnabled = false;
 
-	private View contentView;
-	
 	private static final String TAG = "Group Activity:";
 	
 	public static void Launch(Activity act) {
@@ -126,15 +124,14 @@ public abstract class GroupActivity extends GroupBaseActivity {
 		setupButtons();
 
 		if ( addGroupEnabled && addEntryEnabled ) {
-			contentView = new GroupAddEntryView(this);
+			setContentView(new GroupAddEntryView(this));
 		} else if ( addGroupEnabled ) {
-			contentView = new GroupRootView(this);
+			setContentView(new GroupRootView(this));
 		} else if ( addEntryEnabled ) {
 			throw new RuntimeException("This mode is not supported.");
 		} else {
-			contentView = new GroupViewOnlyView(this);
+			setContentView(new GroupViewOnlyView(this));
 		}
-		setContentView(contentView);
 		
 		Log.w(TAG, "Set view");
 
