@@ -30,6 +30,7 @@ import android.view.ContextMenu.ContextMenuInfo;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.EditText;
 
 import com.android.keepass.KeePass;
 import com.android.keepass.R;
@@ -53,6 +54,8 @@ public abstract class GroupActivity extends GroupBaseActivity {
 	
 	protected boolean addGroupEnabled = false;
 	protected boolean addEntryEnabled = false;
+
+	private View contentView;
 	
 	private static final String TAG = "Group Activity:";
 	
@@ -123,14 +126,16 @@ public abstract class GroupActivity extends GroupBaseActivity {
 		setupButtons();
 
 		if ( addGroupEnabled && addEntryEnabled ) {
-			setContentView(new GroupAddEntryView(this));
+			contentView = new GroupAddEntryView(this);
 		} else if ( addGroupEnabled ) {
-			setContentView(new GroupRootView(this));
+			contentView = new GroupRootView(this);
 		} else if ( addEntryEnabled ) {
 			throw new RuntimeException("This mode is not supported.");
 		} else {
-			setContentView(new GroupViewOnlyView(this));
+			contentView = new GroupViewOnlyView(this);
 		}
+		setContentView(contentView);
+		
 		Log.w(TAG, "Set view");
 
 		if ( addGroupEnabled ) {
@@ -162,6 +167,21 @@ public abstract class GroupActivity extends GroupBaseActivity {
 		registerForContextMenu(getListView());
 		Log.w(TAG, "Finished creating group");
 
+	}
+	
+	@Override
+	public void onResume() {
+		super.onResume();
+		// fix for the annoying default focus of the search input [AP]
+		View list = findViewById(android.R.id.list);
+		if (list != null) {
+			list.requestFocus();
+		}
+		// clear search query between activities
+		EditText searchEdit = (EditText) findViewById(R.id.search_text);
+		if (searchEdit != null) {
+			searchEdit.setText("");
+		}
 	}
 
 	@Override
