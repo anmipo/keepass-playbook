@@ -18,7 +18,7 @@
   along with KeePass for BlackBerry PlayBook.  
   If not, see <http://www.gnu.org/licenses/>.
 -->
- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent" 
   android:orientation="horizontal"
@@ -26,8 +26,15 @@
   style="@style/HeaderBar">
 	<Button android:id="@+id/back_button"
 	  android:layout_width="wrap_content"
-	  android:layout_height="wrap_content" 
+	  android:layout_height="wrap_content"
+	  android:layout_alignParentLeft="true" 
 	  style="@style/Button.Back"
 	  android:text="@string/back"> 
 	</Button>
-</LinearLayout>
+	<TextView 
+	  android:layout_width="wrap_content"
+	  android:layout_height="wrap_content"
+	  android:layout_centerInParent="true"
+	  style="@style/Header.Title"
+	  android:text="@string/application_settings"/>
+</RelativeLayout>
